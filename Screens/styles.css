@@ -4,3 +4,10 @@ html {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.visions {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 120%;
+}
