@@ -11,3 +11,44 @@ html {
     text-align: center;
     padding-top: 120%;
 }
+
+.button_login{
+    background-color: transparent;
+
+    width: 90px;
+    height: 90px;
+    
+    margin-left: 20px;
+
+    border-color: white;
+    border-width:1px;
+    border-style: solid;
+    border-radius: 10px;
+
+    color: white;
+    font-size: 15px;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* Initially hidden */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+} .closer:hover, close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
