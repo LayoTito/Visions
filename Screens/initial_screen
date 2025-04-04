@@ -9,7 +9,11 @@
 </head>
 
 <body>
-    <h1 class="visions">Visions</h1>
+    <h1 class="visions">VISIONS</h1>
+
+    <h2 class="subtitle">Conheça obras. Revisite momentos.</h2>
+
+    <button class="button_register" onclick="togglePopup()">Faça seu cadastro</button>
 
     <button class="button_login" onclick="togglePopup()">Iniciar sessão</button>
 

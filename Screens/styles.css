@@ -8,25 +8,56 @@ html {
 .visions {
     color: white;
     font-size: 50px;
+    font-family: 'AMORIA';
     text-align: center;
     padding-top: 120%;
 }
 
-.button_login{
+.subtitle {
+
+    color: white;
+    font-size: 15px;
+    font-family: 'LEMON MILK Light';
+    text-align: center;
+    margin-top: -20px;
+
+}
+
+.button_login {
     background-color: transparent;
 
-    width: 90px;
-    height: 90px;
-    
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
     margin-left: 20px;
 
     border-color: white;
-    border-width:1px;
+    border-width: 1px;
     border-style: solid;
     border-radius: 10px;
 
     color: white;
     font-size: 15px;
+    font-family: 'LEMON MILK Medium';
+}
+
+.button_register {
+    background-color: white;
+
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 30px;
+
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'LEMON MILK Medium';
 }
 
 .popup {
