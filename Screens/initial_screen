@@ -13,6 +13,28 @@
 
     <button class="button_login" onclick="togglePopup()">Iniciar sessão</button>
 
+    <div class="popup" id="popup" style="display: none;">
+
+        <span class="close" onclick="togglePopup()">&times;</span>
+
+        <p>Visions</p>
+        
+        <input type="text" class="text_box" placeholder="Insira seu e-mail ou nome usuário" required>
+        <input type="password" class="text_box" placeholder="Insira sua senha" required>
+
+    </div>
+
+    <script>
+        function togglePopup() {
+            const popup = document.getElementById("popup");
+            if (popup.style.display === "none" || popup.style.display === "") {
+                popup.style.display = "block"; // Show the popup
+            } else {
+                popup.style.display = "none"; // Hide the popup
+            }
+        }
+    </script>
+
 </body>
 
 </html>

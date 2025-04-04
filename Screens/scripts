@@ -1,3 +1,8 @@
-function togglepopup() {
-    document.getElementsById("popup").classList.toggle("show");
+function togglePopup() {
+    const popup = document.getElementById("popup");
+    if (popup.style.display === "none" || popup.style.display === "") {
+        popup.style.display = "block"; // Show the popup
+    } else {
+        popup.style.display = "none"; // Hide the popup
+    }
 }
