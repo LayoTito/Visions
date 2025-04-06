@@ -8,3 +8,223 @@ html {
     color: white;
 
 }
+
+.navigation_bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #161616;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button_navigation_bar {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: AMORIA;
+    font-size: 40px;
+}
+
+.button_lupa_navigation_bar {
+    background-color: transparent;
+    background-image: url(../../Images/lupa.png);
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.daily_recommendation_container {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    height: 150px;
+    background-color: #727476;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.daily_recommendation_title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    font-family: LEMON MILK;
+    text-align: left;
+    color: rgb(29, 41, 46);
+    margin-top: -40px;
+    margin-left: 45px;
+}
+
+.daily_recommendation_image {
+    position: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 110px;
+    margin-left: -80px;
+    margin-top: 100px;
+    border-radius: 5px;
+    background-image: url(../../Images/daily_recommendation.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.daily_recommendation_description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    width: 150px;
+    font-family: Arial Bold;
+    text-align: justify;
+    color: rgb(29, 41, 46);
+    margin-top: 20px;
+    margin-left: 49px;
+}
+
+.popular_books_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 70px;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    height: 270px;
+    background-color: #727476;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popular_books_title {
+    position: absolute;
+    top: -2%;
+    left: 17%;
+    font-size: 30px;
+    text-align: center;
+    font-family: LEMON MILK;
+    text-align: center;
+    color: rgb(29, 41, 46);
+}
+
+/*.popular_books_weekly {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    width: 150px;
+    font-family: Arial Bold;
+    text-align: justify;
+    color: rgb(29, 41, 46);
+    margin-top: 20px;
+    margin-left: 49px;
+}
+
+.popular_books_monthly {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    width: 150px;
+    font-family: Arial Bold;
+    text-align: justify;
+    color: rgb(29, 41, 46);
+    margin-top: 20px;
+    margin-left: 49px;
+}
+
+.popular_books_yearly {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    width: 150px;
+    font-family: Arial Bold;
+    text-align: justify;
+    color: rgb(29, 41, 46);
+    margin-top: 20px;
+    margin-left: 49px;
+}
+
+.popular_books_line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: black;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 1px;
+    background-color: rgb(29, 41, 46);
+    margin-top: 20px;
+    margin-left: 49px;
+}
+
+.popular_books_image1 {
+    position: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 110px;
+    margin-left: -80px;
+    margin-top: 100px;
+    border-radius: 5px;
+    background-image: url(../../Images/popular_books1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.popular_books_image2 {
+    position: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 110px;
+    margin-left: -80px;
+    margin-top: 100px;
+    border-radius: 5px;
+    background-image: url(../../Images/popular_books2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.popular_books_image3 {
+    position: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 110px;
+    margin-left: -80px;
+    margin-top: 100px;
+    border-radius: 5px;
+    background-image: url(../../Images/popular_books3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}*/
