@@ -188,39 +188,3 @@ html {
     font-size: 15px;
     font-family: 'LEMON MILK Medium';
 }
-
-.terms {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 13px;
-    font-family: LEMON MILK Light;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.already_registered {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: -10px;
-
-    font-size: 13px;
-    font-family: LEMON MILK Light;
-    text-align: center;
-}
-
-.text_box_container {
-
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-
-}
-
-a[href] {
-    text-decoration: none;
-    color: rgb(110, 107, 195);
-}
