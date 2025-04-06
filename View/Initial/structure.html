@@ -25,8 +25,9 @@
 
     </div>
 
-    <div class="popup_overlay" id="popup_overlay">
-        <div class="popup" id="popup">
+    <div class="popup_overlay" id="popup_overlay" onclick="togglePopup()">
+        
+        <div class="popup" id="popup" onclick="event.stopPropagation()">
 
             <span class="close" onclick="togglePopupLogin()">&times;</span>
 
@@ -59,7 +60,7 @@
                 <input type="password" class="text_box" placeholder="Confirme sua senha" required>
 
             </div>
-           
+        
             <button class="button_register_popup">Cadastrar</button>
 
             <p class ="terms">Ao clicar em "Cadastrar", você concorda com os <a href="#">Termos de Serviço</a> e a <a href="#">Política de Privacidade</a>.</p>
@@ -67,13 +68,25 @@
             <p class="already_registered">Já possui uma conta? <a href="#" onclick="togglePopupLogin()">Iniciar sessão</a>.</p>
 
         </div>
-        
     </div>
 
+
     <script>
+        function togglePopup() {
+            const popupLogin = document.getElementById("popup");
+            const popupRegister = document.getElementById("popup_register");
+            const overlay = document.getElementById("popup_overlay");
+            
+
+            popupLogin.style.display = "none";
+            popupRegister.style.display = "none";
+            overlay.style.display = "none";
+        }
+
         function togglePopupLogin() {
             const popup = document.getElementById("popup");
             const overlay = document.getElementById("popup_overlay");
+            
 
             if (popup.style.display === "none" || popup.style.display === "") {
 
