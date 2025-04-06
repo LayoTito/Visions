@@ -46,7 +46,25 @@
 
             <p class="logo_popup">Visions</p>
             
+<<<<<<< Updated upstream:View/Initial/structure
             <input type="text" class="text_box" placeholder="Insira seu e-mail ou nome usuário" required>
+=======
+            <div class="text_box_container">
+
+                <input type="text" class="text_box" placeholder="Insira seu e-mail ou nome de usuário" required>
+
+                <input type="password" class="text_box" placeholder="Insira sua senha" required>
+    
+                <input type="password" class="text_box" placeholder="Confirme sua senha" required>
+
+            </div>
+           
+            <button class="button_register_popup">Cadastrar</button>
+
+            <p class ="terms">Ao clicar em "Cadastrar", você concorda com os <a href="#">Termos de Serviço</a> e a <a href="#">Política de Privacidade</a>.</p>
+
+            <p class="already_registered">Já possui uma conta? <a href="#" onclick="togglePopupLogin()">Iniciar sessão</a>.</p>
+>>>>>>> Stashed changes:Screens/initial_screen
 
             <input type="password" class="text_box" placeholder="Insira sua senha" required>
         </div>
