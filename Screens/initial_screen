@@ -9,32 +9,52 @@
 </head>
 
 <body>
+
     <h1 class="visions">VISIONS</h1>
 
     <h2 class="subtitle">Conheça obras. Revisite momentos.</h2>
 
-    <button class="button_register" onclick="togglePopup()">Faça seu cadastro</button>
-
-    <button class="button_login" onclick="togglePopup()">Iniciar sessão</button>
-
-    <div class="popup" id="popup" style="display: none;">
-
-        <span class="close" onclick="togglePopup()">&times;</span>
-
-        <p>Visions</p>
+    <div class="button_container">
         
-        <input type="text" class="text_box" placeholder="Insira seu e-mail ou nome usuário" required>
-        <input type="password" class="text_box" placeholder="Insira sua senha" required>
+        <button class="button_login" onclick="togglePopup()">Iniciar sessão</button>
+        
+        <button class="button_register" onclick="togglePopup()">Faça seu cadastro</button>
 
+    </div>
+
+    <div class="popup_overlay" id="popup_overlay">
+        <div class="popup" id="popup">
+
+            <span class="close" onclick="togglePopup()">&times;</span>
+
+            <p class="logo_popup">Visions</p>
+            
+            <input type="text" class="text_box" placeholder="Insira seu e-mail ou nome usuário" required>
+
+            <input type="password" class="text_box" placeholder="Insira sua senha" required>
+
+            <button class="button_login_popup">Iniciar sessão</button>
+
+            <p class="forgot_password">Esqueceu sua senha?</p>
+
+        </div>
     </div>
 
     <script>
         function togglePopup() {
             const popup = document.getElementById("popup");
+            const overlay = document.getElementById("popup_overlay");
+
             if (popup.style.display === "none" || popup.style.display === "") {
-                popup.style.display = "block"; // Show the popup
+
+                popup.style.display = "block";
+                overlay.style.display = "block";
+
             } else {
-                popup.style.display = "none"; // Hide the popup
+
+                popup.style.display = "none";
+                overlay.style.display = "none"; 
+                
             }
         }
     </script>
