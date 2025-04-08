@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="popup_style.css">
+    <script type="module" src="../../Data_Base/model.js" defer></script>
+    
 
 </head>
 
@@ -33,35 +35,32 @@
 
             <p class="logo_popup">VISIONS</p>
             
-            <input type="text" class="text_box" placeholder="Insira seu e-mail ou nome usuário" required>
+            <input id="emailLogin" type="text" class="text_box" placeholder="Insira seu e-mail ou nome usuário" required>
 
-            <input type="password" class="text_box" placeholder="Insira sua senha" required>
+            <input id="passwordLogin" type="password" class="text_box" placeholder="Insira sua senha" required>
 
-            <button class="button_login_popup">Iniciar sessão</button>
+            <button class="button_login_popup" onclick="login()">Iniciar sessão</button>
 
             <p class="forgot_password">Esqueceu sua senha?</p>
 
         </div>
 
-        <div class="popup" id="popup_register">
+        <div class="popup" id="popup_register" onclick="event.stopPropagation()">
             <span class="close" onclick="togglePopupRegister()">&times;</span>
 
             <p class="logo_popup">VISIONS</p>
-            
-            <input type="text" class="text_box" placeholder="Insira seu e-mail ou nome usuário" required>
-
 
             <div class="text_box_container">
 
-                <input type="text" class="text_box" placeholder="Insira seu e-mail ou nome de usuário" required>
+                <input id="email" type="text" class="text_box" placeholder="Insira seu e-mail" required>
 
-                <input type="password" class="text_box" placeholder="Insira sua senha" required>
+                <input id="password" type="password" class="text_box" placeholder="Insira sua senha" required>
     
                 <input type="password" class="text_box" placeholder="Confirme sua senha" required>
 
             </div>
         
-            <button class="button_register_popup">Cadastrar</button>
+            <button class="button_register_popup" onclick="getUserCredentials()">Cadastrar</button>
 
             <p class ="terms">Ao clicar em "Cadastrar", você concorda com os <a href="#">Termos de Serviço</a> e a <a href="#">Política de Privacidade</a>.</p>
 
@@ -70,7 +69,11 @@
         </div>
     </div>
 
+
+    
     <script src="scripts.js"></script>
+    <script src="../../Data_Base/functions.js" ></script>
+    
 
 </body>
 </html>

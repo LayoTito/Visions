@@ -16,11 +16,12 @@
     backdrop-filter: blur(5px);
 }
 
+
 .popup {
     position: absolute;
     z-index: 2;
     display: none;
-    pointer-events: none;
+    pointer-events: auto;
 
     top: 50%;
     left: 50%;
@@ -36,10 +37,6 @@
 
     background-color: rgba(44, 44, 44, 1);
     color: white;
-}
-
-.popup * {
-    pointer-events: auto;
 }
 
 .close {
@@ -58,13 +55,14 @@
     transform: translate(-50%, 0%);
     
     font-size: 13px;
+    color: white;
 
     border-color: white;
     border-width: 1px;
     border-radius: 16px;
     border-style: solid;
     
-    width: 95%;
+    width: 90%;
     height: 1px;
     padding: 15px;
     margin-bottom: 15px;
@@ -99,6 +97,19 @@
     font-family: 'LEMON MILK Medium';
 }
 
+.button_login_popup:hover {
+    cursor: pointer;
+}
+
+.button_login_popup:active {
+    width: 190px;
+    height: 35px;
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+}
+
 .forgot_password {
     position: relative;
 
@@ -116,6 +127,8 @@
     position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: auto;
 
     width: 200px;
     height: 40px;
@@ -129,6 +142,17 @@
     color: black;
     font-size: 15px;
     font-family: 'LEMON MILK Medium';
+}
+
+.button_register_popup:hover {
+    cursor: pointer;
+}
+
+.button_register_popup:active {
+    width: 190px;
+    height: 35px;
+
+    font-size: 13px;
 }
 
 .terms {

@@ -51,6 +51,24 @@ html {
     font-family: 'LEMON MILK Medium';
 }
 
+.button_login:hover {
+    width: 110px;
+    height: 110px;
+
+    margin-right: -10px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+.button_login:active {
+    width: 90px;
+    height: 90px;
+
+    font-size: 13px;
+}
+
 .button_register {
     background-color: white;
 
@@ -69,4 +87,21 @@ html {
     font-size: 15px;
     font-weight: bold;
     font-family: 'LEMON MILK Medium';
+}
+
+.button_register:hover {
+    width: 110px;
+    height: 110px;
+
+    margin-right: -10px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+.button_register:active {
+    width: 90px;
+    height: 90px;
+
+    font-size: 13px;
 }
