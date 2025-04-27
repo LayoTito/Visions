@@ -29,6 +29,20 @@ const db = getFirestore(app);
 const user = null;
 
 function getUserCredentials() {
+  window.location.href = "../Home/structure.html";
+}
+
+window.getUserCredentials = getUserCredentials;
+
+function login() {
+  window.location.href = "../Home/structure.html";
+}
+
+window.login = login;
+
+
+
+/*function getUserCredentials() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
@@ -69,4 +83,4 @@ function login() {
     });
 }
 
-window.login = login;
+window.login = login;*/
