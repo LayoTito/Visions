@@ -7,18 +7,42 @@ html {
     color: rgb(255, 255, 255);
 }
 
+.visions_container {
+    position: absolute;
+
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+    max-height: auto;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.visions_logo {
+
+    font-size: 20px;
+
+    margin-bottom: -40px;
+
+}
+
 .visions {
     font-size: 50px;
     font-family: AMORIA;
     text-align: center;
-    padding-top: 120%;
 }
 
 .subtitle {
     font-size: 15px;
     font-family: LEMON MILK Light;
     text-align: center;
-    margin-top: -30px;
+
+    margin-top: -20px;
+
 }
 
 .button_container {
