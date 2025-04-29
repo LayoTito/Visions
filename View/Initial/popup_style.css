@@ -22,6 +22,7 @@
     z-index: 2;
     display: none;
     pointer-events: auto;
+    flex-direction: column;
 
     top: 50%;
     left: 50%;
@@ -47,12 +48,28 @@
     font-size: 20px;
 } 
 
+.text_box_container {
+
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -70px;
+    
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
 .text_box{
     background-color: transparent;
 
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 0%);
     
     font-size: 13px;
     color: white;
@@ -65,15 +82,37 @@
     width: 90%;
     height: 1px;
     padding: 15px;
-    margin-bottom: 15px;
     
 }
 
+.logo_container {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: auto;
+    height: auto;
+
+}
+
+.visions_logo {
+
+    font-size: 15px;
+    text-align: center;
+
+}
+
 .logo_popup {
+
     text-align: center;
     font-size: 40px;
     font-family: AMORIA;
-    margin-bottom: 50px;
+ 
 }
 
 .button_login_popup {
@@ -127,12 +166,13 @@
     position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+ 
     pointer-events: auto;
+
+    margin-top: 50px;
 
     width: 200px;
     height: 40px;
-    margin-top: -50px;
 
     border-color: white;
     border-width: 1px;
@@ -153,6 +193,8 @@
     height: 35px;
 
     font-size: 13px;
+
+    margin-bottom: 5px;
 }
 
 .terms {
@@ -177,14 +219,6 @@
     text-align: center;
 }
 
-.text_box_container {
-
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-
-}
 
 a[href] {
     text-decoration: none;
