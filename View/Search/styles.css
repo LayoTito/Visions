@@ -1,0 +1,121 @@
+html {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+    background-color: #161616;
+
+}
+
+.background_container {
+
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.background_visions {
+
+    margin-top: auto;
+
+    font-size: 50px;
+
+}
+
+.visions_logo{
+
+    margin-bottom: auto;
+
+}
+
+.nav_container {
+
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 9%;
+    
+    background-color: white;
+
+    border-radius: 14px;
+
+    box-shadow: 0px 1px 10px #16161677;
+
+}
+
+.nav_back_arrow {
+
+    margin-top: 10px;
+    margin-left: 15px;
+
+    width: 30px;
+    height: 30px;
+
+}
+
+.nav_search_bar {
+    
+    margin-top: 10px;
+    margin-left: 20px;
+
+    width: 70%;
+    height: 30px;
+
+    border: none;
+
+    font-size: 18px;;
+
+}
+
+.filter_container {
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    width: 80%;
+    height: 6%;
+
+    background-color: white;
+
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+
+}
+
+.filter_icon {
+
+    margin-top: 7px;
+    margin-left: 10px;
+
+    width: 30px;
+    height: 30px;
+
+}
+
+.filter_text {
+
+    margin-left: 12px;
+
+    color: black;
+
+}
