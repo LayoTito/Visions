@@ -60,11 +60,19 @@ html {
 
 .nav_back_arrow {
 
+    cursor: pointer;
+    z-index: 1;
+
     margin-top: 10px;
     margin-left: 15px;
 
     width: 30px;
     height: 30px;
+
+    background-image: url("../../Images/profile_back_arrow.png");
+    background-color: transparent;
+    background-size: cover;
+    border: none;
 
 }
 
