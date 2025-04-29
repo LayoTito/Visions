@@ -7,15 +7,22 @@
     <title>Profile Structure</title>
 
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
 
 </head>
 <body>
 
-    <div class="background-image" alt="Profile Image"></div>
+    <div class="background-image" alt="Profile Image">
+
+        <buttom class="profile_back_arrow" onclick="toHomeScreen()"></buttom>
+
+    </div>
 
     <div class="profile_container">
 
-        <button class="profile_icon"></button>
+        <img class="profile_icon" src="../../Images/profile_icon.jpg" alt="Profile Icon">
+
+        <img class="profile_edit_icon" src="../../Images/profile_edit_icon.png" alt="Edit Profile Icon"> 
 
         <p class="profile_name">Ignatius Zedric</p>
         <p class="profile_id">@ignatius_zedric</p>
@@ -24,6 +31,88 @@
 
     </div>
 
+    <div class="profile_status_container">
+
+        <div class="status_container">
+
+            <p class="status_number">1.310</p>
+            <p class="status">Seguidores</p>
+
+        </div>
+
+        <div class="status_container">
+
+            <p class="status_number">451</p>
+            <p class="status">Seguindo</p>
+
+        </div>
+
+        <div class="status_container">
+
+            <p class="status_number">56</p>
+            <p class="status">Livros lidos</p>
+
+        </div>
+
+    </div>
+
+    <hr class="profile_line">
+
+    <div class="profile_reads_container">
+
+        <h1 class="profile_reads_title">Livros favoritos</h1>
+
+        <div class="profile_reads_books_container">
+
+            <img src="../../Images/monster_integration.jpg" class="profile_reads_book" alt="Monster Integration">
+            <img src="../../Images/monster_integration.jpg" class="profile_reads_book" alt="Monster Integration">
+            <img src="../../Images/monster_integration.jpg" class="profile_reads_book" alt="Monster Integration">
+            
+        </div>
+
+    </div>
+
+    <div class="review_container">
+
+        <div class="review_container_upper">
+
+            <img src="../../Images/The_Prince_Without_Sorrow.jpg" class="review_icon" alt="The Prince Witgout Sorrow">
+
+            <div class="review_text_container">
+
+                <p class="review_title">Perfeito!!</p>
+                <p class="review_description">Amei esse livro, a história é incrível e os personagens são muito bem desenvolvidos.</p>
+
+                <hr class="review_line">
+               
+            </div>
+
+
+        </div>
+
+        <div class="review_container_lower">
+
+           <img src="../../Images/star_rating_icon.png" class="review_stars" alt="Star Rating Icon">
+
+           <div class="favorited_container">
+
+                <p class="favorited_number">91</p>
+                <img src="../../Images/heart_icon.png" class="review_icons" alt="Favorited Icon">
+           
+            </div>
+
+            <div class="favorited_container">
+
+                <p class="comment_number">12</p>
+                <img src="../../Images/comment_icon.png" class="review_icons inverse" alt="Comment Icon">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="space"></div>
 
 </body>
 </html>
