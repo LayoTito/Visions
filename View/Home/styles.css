@@ -119,14 +119,14 @@ html {
     align-items: center;
 }
 .popular_books_title {
-    position: fixed;
-    top: -2%;
-    left: 28%;
+    position: static;
     font-size: 20px;
     text-align: center;
     font-family: LEMON MILK;
     text-align: center;
     color: rgb(29, 41, 46);
+    margin-top: -210px;
+    margin-left: -10px;
 }
 
 .popular_books_weekly {
@@ -184,7 +184,7 @@ html {
 }
 
 .popular_books_image1 {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -199,7 +199,7 @@ html {
 }
 
 .popular_books_image2 {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -214,7 +214,7 @@ html {
 }
 
 .popular_books_image3 {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -228,3 +228,158 @@ html {
     background-repeat: no-repeat;
 }
 
+.new_releases_container {
+    position: absolute;
+    top: 96%;
+    left: 50%;
+    margin-top: 82px;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    height: 300px;
+    background-color: #727476;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.new_releases_title {
+    position: static;
+    font-size: 20px;
+    text-align: center;
+    font-family: LEMON MILK;
+    color: rgb(29, 41, 46);
+    margin-left: -90px;
+}
+
+.seeall_button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    margin-right: 15px;
+    align-self: flex-end;
+    background-image: url(../../Images/plus-symbol-button.png);
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    color: rgb(29, 41, 46);
+}
+
+.new_releases_books_container {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.new_releases_image {
+
+    width: 70px;
+    height: auto;
+    border-radius: 5px;
+
+}
+
+.recommendations_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 800px;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    height: 500px;
+    background-color: #727476;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommendations_title {
+    position: static;
+    font-size: 17px;
+    text-align: center;
+    font-family: LEMON MILK;
+    text-align: center;
+    color: rgb(29, 41, 46);
+    margin-top: -420px;
+}
+
+.recommendations_genre_container {
+
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.recommendations_genre {
+
+    font-size: 10px;
+    width: 40px;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(29, 41, 46);
+    
+
+}
+
+.recommendations_book1_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 100px;
+    margin-left: -90px;
+    margin-top: 40px;
+    border-radius: 5px;
+    background-image: url(../../Images/amanhecer\ na\ colheita.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.recommendations_book2_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 120px;
+    margin-left: 0px;
+    margin-top: 40px;
+    border-radius: 5px;
+    background-image: url(../../Images/the\ poppy\ war.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.recommendations_book3_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 100px;
+    margin-left: 90px;
+    margin-top: 40px;
+    border-radius: 10px;
+    background-image: url(../../Images/warbreaker.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
