@@ -5,3 +5,7 @@ function toProfileScreen() {
 function toSearchScreen() {
     window.location.href = "../Search/structure.html";
 }
+
+function toBookScreen() {
+    window.location.href = "../Book/structure.html";
+}
