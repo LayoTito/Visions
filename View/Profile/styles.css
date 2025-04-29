@@ -224,6 +224,9 @@ html {
     align-self: left;
     text-align: left;
 
+    margin-right: auto;
+    margin-left: 20px;
+
 }
 
 .profile_reads_books_container {
@@ -261,6 +264,17 @@ html {
 
 }
 
+.review_title {
+
+    position: absolute;
+
+    font-size: 20px;
+
+    top: 95%;
+    left: 12.5%;
+
+}
+
 .review_container {
 
     position: absolute;
@@ -270,7 +284,7 @@ html {
 
     background-image: linear-gradient(to right, #a7ac91, #242424);
     
-    top: 103%;
+    top: 108%;
     left: 50%;
     transform: translate(-50%, -50%);
 
