@@ -76,11 +76,14 @@ html {
 
 .book_info_container {
     position: absolute;
-    top: 117%;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    margin-left: 7%;
+    
+    top: 45%;
+    left: 0;
+
+    margin-left: 20px;
+
 }
 
 .book_general_info_container {
@@ -117,11 +120,11 @@ html {
     text-align: center;
     align-content: center;
     margin-top: 2%;
-    width: 85px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-color: #4b5d77;
-    font-size: 40px;
-    border-radius: 40%;
+    font-size: 20px;
+    border-radius: 13px;
 
 }
 
@@ -129,16 +132,17 @@ html {
 
     position: relative;
     display: flex;
-    margin-left: 5%;
-    width: 100%;
     flex-direction: column;
+
+    margin-left: 10px;
+    margin-top: 5px;
 
 }
 
 .rating_stars{
 
     background-size:cover;
-    width: 90%;
+    width: 105px;
     filter: invert(1);
 
 }
@@ -149,21 +153,114 @@ html {
 
 }
 
+.book_line {
 
-.addTo_container {
+    position: absolute;
+
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 90%;
+
+}
+
+.bellow {
+
+    top: 85%;
+
+}
+
+.buttons_container {
+    position: absolute;
+    display: flex;
+
+    top: 74%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    gap: 10px;
+
+}
+
+.plus_icon {
+
+    position: absolute;
+
+    margin-top: 10px;
+    margin-left: 10px;
+
+    width: 23px;
+
+    filter: invert(1);
+
+}
+
+.button_size {
+
+    width: 115px;
+    height: 45px;
+
+    border-radius: 20px;
+    border: none;
+
+    background-color: #4b5d77;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+.libary {
+
+    width: 140px;
+
+    background-color: transparent;
+
+    border: 3px solid #4b5d77;
+
+}
+
+.description_container {
 
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-color: #eeeeee;
-    top: 200%;
+
+    top: 92%;
+    left: 0;
+
+    margin-left: 20px;
 
 }
 
-.divider {
+.description_title {
 
-    background-color: #8f8f8f;
-    width: 90%;
-    height: 2px;
+    margin-top: auto;
+
+    font-size: 30px;
+
+}
+
+.description_text {
+
+    margin-top: -10px;
+    margin-bottom: auto;
+
+    font-size: 15px;
+    color: #b0b3b8;
+
+}
+
+.empty_space {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: 20%;
 
 }
