@@ -266,10 +266,10 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: 800px;
+    margin-top: 830px;
     transform: translate(-50%, -50%);
     width: 270px;
-    height: 500px;
+    height: 550px;
     background-color: #727476;
     border-radius: 10px;
     display: flex;
@@ -284,7 +284,7 @@ html {
     font-family: LEMON MILK;
     text-align: center;
     color: rgb(29, 41, 46);
-    margin-top: -420px;
+    margin-top: -470px;
 }
 
 .recommendations_genre_container {
@@ -296,6 +296,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -20px;
     gap: 10px;
 
 }
@@ -316,7 +317,7 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -90px;
+    margin-top: -120px;
     transform: translate(-50%, -50%);
     width: 250px;
     height: 130px;
@@ -386,33 +387,146 @@ html {
 }
 
 .recommendations_book2_container {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 30px;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 130px;
+    background-color: #4073FF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommendations_book2_title {
+    position: absolute;
+    font-size: 13px;
+    font-family: LEMON MILK;
+    text-align: center;
+    color: rgb(29, 41, 46);
+    margin-top: -90px;
+    margin-left: 80px;
+}
+
+.recommendations_book2_author {
+    position: absolute;
+    font-size: 10px;
+    font-family: sans-serif;
+    text-align: center;
+    color: rgb(29, 41, 46);
+    margin-top: -60px;
+    margin-left: 80px;
+}
+
+.recommendations_book2_description {
+    position: absolute;
+    margin-right: -20px;
+    font-size: 10px;
+    width: 140px;
+    font-family: sans-serif;
+    text-align: justify;
+    color: rgb(29, 41, 46);
+    margin-top: 30px;
+    margin-left: 60px;
+}
+
+.starsrating {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 2px;
+    margin-right: 13px;
+    filter: invert(1);
+    width: 80px;
+    height: 20px;
+}
+
+.recommendations_book2_image {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 75px;
-    height: 120px;
-    margin-left: 0px;
-    margin-top: 40px;
+    height: 110px;
+    margin-left: -80px;
+    margin-top: 0px;
     border-radius: 5px;
-    background-image: url(../../Images/the\ poppy\ war.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-
 
 .recommendations_book3_container {
     position: absolute;
     top: 50%;
     left: 50%;
+    margin-top: 180px;
     transform: translate(-50%, -50%);
-    width: 70px;
-    height: 100px;
-    margin-left: 90px;
-    margin-top: 40px;
+    width: 250px;
+    height: 130px;
+    background-color: #4073FF;
     border-radius: 10px;
-    background-image: url(../../Images/warbreaker.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommendations_book3_title {
+    position: absolute;
+    font-size: 13px;
+    font-family: LEMON MILK;
+    text-align: center;
+    color: rgb(29, 41, 46);
+    margin-top: -90px;
+    margin-left: 80px;
+}
+
+.recommendations_book3_author {
+    position: absolute;
+    font-size: 10px;
+    font-family: sans-serif;
+    text-align: center;
+    color: rgb(29, 41, 46);
+    margin-top: -60px;
+    margin-left: 80px;
+}
+
+.recommendations_book3_description {
+    position: absolute;
+    margin-right: -20px;
+    font-size: 10px;
+    width: 140px;
+    font-family: sans-serif;
+    text-align: justify;
+    color: rgb(29, 41, 46);
+    margin-top: 30px;
+    margin-left: 60px;
+}
+
+.starsrating {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 2px;
+    margin-right: 13px;
+    filter: invert(1);
+    width: 80px;
+    height: 20px;
+}
+
+.recommendations_book3_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 110px;
+    margin-left: -80px;
+    margin-top: 0px;
+    border-radius: 5px;
     background-size: cover;
     background-repeat: no-repeat;
 }
