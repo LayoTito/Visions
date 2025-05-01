@@ -141,11 +141,12 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
 }
 
 .popular_books_time {
     font-size: 18px;
+    width: 75px;
     text-align: center;
     font-family: sans-serif;
     color: rgb(29, 41, 46);
@@ -153,7 +154,10 @@ html {
 
 .popular_books_time_active {
 
-    font-size: 24px;
+    font-size: 22px;
+    border:rgb(29, 41, 46) solid 1px;
+    border-radius: 50px;
+    padding: 2px 8px;
 
 }
 
@@ -219,7 +223,7 @@ html {
     text-align: center;
     font-family: LEMON MILK;
     color: rgb(29, 41, 46);
-    margin-left: -90px;
+    margin-left: -80px;
 }
 
 .seeall_button {
