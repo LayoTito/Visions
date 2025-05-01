@@ -7,6 +7,7 @@
     <title>Profile Structure</title>
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
     <script src="scripts.js"></script>
 
 </head>
@@ -20,7 +21,7 @@
 
     <div class="profile_container">
 
-        <img class="profile_icon" src="../../Images/profile_icon.jpg" alt="Profile Icon">
+        <img class="profile_icon" src="../../Images/profile_repo_icon.gif" alt="Profile Icon">
 
         <img class="profile_edit_icon" src="../../Images/profile_edit_icon.png" alt="Edit Profile Icon"> 
 
@@ -58,19 +59,28 @@
 
     <hr class="profile_line">
 
-    <div class="profile_reads_container">
+    <div class="reads_container">
 
-        <h1 class="profile_reads_title">Livros favoritos</h1>
+        <h1 class="reads_title">Livros favoritos</h1>
 
-        <div class="profile_reads_books_container">
-
-            <img src="../../Images/monster_integration.jpg" class="profile_reads_book" alt="Monster Integration">
-            <img src="../../Images/monster_integration.jpg" class="profile_reads_book" alt="Monster Integration">
-            <img src="../../Images/monster_integration.jpg" class="profile_reads_book" alt="Monster Integration">
+        <div class="slider">
             
+            <div class="slideshow" style="--quantity: 6">
+                
+                <img src="../../Images/monster_integration.jpg" class="reads_book" style="--position: 1" alt="Monster Integration">
+                <img src="../../Images/monster_integration.jpg" class="reads_book" style="--position: 2" alt="Monster Integration">
+                <img src="../../Images/monster_integration.jpg" class="reads_book" style="--position: 3" alt="Monster Integration">
+                <img src="../../Images/monster_integration.jpg" class="reads_book" style="--position: 4" alt="Monster Integration">
+                <img src="../../Images/monster_integration.jpg" class="reads_book" style="--position: 5" alt="Monster Integration">
+                <img src="../../Images/monster_integration.jpg" class="reads_book" style="--position: 6" alt="Monster Integration">
+                
+            </div>
+
         </div>
 
     </div>
+
+    <hr class="profile_line above_review">
 
     <h1 class="review_title">Resenhas</h1>
 

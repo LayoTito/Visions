@@ -1,3 +1,5 @@
+
+
 html {
 
     color: white;
@@ -82,7 +84,7 @@ html {
 
 .profile_icon {
 
-    background-size: cover;
+    object-fit: cover;
 
     margin-top: -50px;
 
@@ -192,62 +194,16 @@ html {
     width: 80%;
     height: 0.5px;
 
-    border-radius: 1px;;
+    border: 1px solid #727476;
+    border-radius: 60px/75%;
     
     background-color: #727476;
 
 }
 
-.profile_reads_container {
+.above_review {
 
-    position: absolute;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
-.profile_reads_title {
-
-    font-size: 20px;
-    justify-self: left;
-    align-self: left;
-    text-align: left;
-
-    margin-right: auto;
-    margin-left: 20px;
-
-}
-
-.profile_reads_books_container {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-
-}
-
-.profile_reads_book {
-
-    width: 80px;
-    height: auto;
-
-    border-radius: 5px;
-
-    box-shadow: 0 0 5px black;
+    top: 88%;
 
 }
 
@@ -271,8 +227,9 @@ html {
 
     font-size: 20px;
 
-    top: 87%;
-    left: 12.5%;
+    top: 90%;
+    left: 0;
+    margin-left: 30px;
 
 }
 
@@ -285,7 +242,7 @@ html {
 
     background-image: linear-gradient(to right, #a7ac91, #242424);
     
-    top: 108%;
+    top: 110%;
     left: 50%;
     transform: translate(-50%, -50%);
 
