@@ -1,5 +1,7 @@
 html {
 
+    scrollbar-width: none;
+
     background-color: #161616;
     background-size: cover;
     background-repeat: no-repeat;
@@ -106,6 +108,8 @@ html {
     color: rgb(29, 41, 46);
     margin-top: 20px;
     margin-left: 49px;
+    max-height: 87px;
+    overflow: hidden;
 }
 
 .popular_books_container {
@@ -330,8 +334,7 @@ html {
     align-items: center;
 }
 
-.recommendations_book1_image {
-
+.recommendations_book_image {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -363,18 +366,6 @@ html {
     color: rgb(29, 41, 46);
     margin-top: -60px;
     margin-left: 80px;
-}
-
-.recommendations_book1_description {
-    position: absolute;
-    margin-right: -20px;
-    font-size: 10px;
-    width: 140px;
-    font-family: sans-serif;
-    text-align: justify;
-    color: rgb(29, 41, 46);
-    margin-top: 30px;
-    margin-left: 60px;
 }
 
 .starsrating {
@@ -424,7 +415,7 @@ html {
     margin-left: 80px;
 }
 
-.recommendations_book2_description {
+.recommendations_book_description {
     position: absolute;
     margin-right: -20px;
     font-size: 10px;
@@ -434,6 +425,8 @@ html {
     color: rgb(29, 41, 46);
     margin-top: 30px;
     margin-left: 60px;
+    max-height: 60px;
+    overflow: hidden;
 }
 
 .starsrating {
@@ -445,20 +438,6 @@ html {
     filter: invert(1);
     width: 80px;
     height: 20px;
-}
-
-.recommendations_book2_image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 75px;
-    height: 110px;
-    margin-left: -80px;
-    margin-top: 0px;
-    border-radius: 5px;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .recommendations_book3_container {
@@ -517,18 +496,4 @@ html {
     filter: invert(1);
     width: 80px;
     height: 20px;
-}
-
-.recommendations_book3_image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 75px;
-    height: 110px;
-    margin-left: -80px;
-    margin-top: 0px;
-    border-radius: 5px;
-    background-size: cover;
-    background-repeat: no-repeat;
 }

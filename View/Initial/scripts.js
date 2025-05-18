@@ -44,3 +44,24 @@ function togglePopupRegister() {
     }
 }
 
+function popupAnimation() {
+
+    let id = null;
+    const elem = document.getElementById("popup");
+    let pos = 180;
+    clearInterval(id);
+    id = setInterval(frame, 4);
+    
+    function frame() {
+      if (pos == 350) { clearInterval(id); } 
+      else {
+        pos++;
+
+        elem.style.top = (pos + 'px');
+        elem.style.opacity = 0 + (pos / 350);
+        elem.style.left = 4.35 + '%';
+        elem.style.transform = "scale(" + 1 + ")";
+
+      }
+    }
+}
