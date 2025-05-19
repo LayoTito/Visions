@@ -35,6 +35,7 @@ function hotPicksLoads() {
 
 }
 
+
 function releasesLoads() {
 
     const release1 = document.getElementById("release-book1");
@@ -139,14 +140,28 @@ function eventListenerHandler() {
 
     let booksImage = document.querySelectorAll("img.click");
 
-    booksImage.forEach(
+    booksImage.forEach(function(element) { 
+        element.addEventListener("click", toBookScreen, false);
+    });
 
-        function(element) { element.addEventListener("click", toBookScreen, false); }
-
-    );
-
+    let hotPicksPeriod = document.querySelectorAll("h1.popular_books_period");
+    hotPicksPeriod.forEach(function(element) {
+        element.addEventListener("click", function() {
+            document.querySelectorAll('.popular_books_period')
+                .forEach(e => e.classList.remove('popular_books_period_active'));
+            this.classList.add('popular_books_period_active');
+        });
+    });
 }
 
+function toUppercase(element) {
+
+    document.querySelectorAll("h1.popular_books_period")
+        .forEach(el => el.classList.remove("popular_books_period_active"));
+    element.classList.add("popular_books_period_active");
+
+   
+}
 function toProfileScreen() { window.location.href = "../Profile/structure.html"; }
 
 function toSearchScreen() { window.location.href = "../Search/structure.html"; }
@@ -156,3 +171,12 @@ function toBookScreen() {
     window.location.href = "../Book/structure.html";
     
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    dailyLoad();
+    hotPicksLoads();
+    releasesLoads();
+    recommendationLoads();
+    eventListenerHandler();
+});

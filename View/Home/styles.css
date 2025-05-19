@@ -119,7 +119,8 @@ html {
     left: 50%;
     margin-top: 70px;
     transform: translate(-50%, -50%);
-    width: 270px;
+    width: 100%;
+    max-width: 500px;
     height: 270px;
     background-color: #727476;
     border-radius: 10px;
@@ -138,31 +139,38 @@ html {
     margin-top: 5px;
 }
 
-.popular_books_time_container {
-    position: absolute;
-    top: 21%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.popular_books_period_container {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 8px;
+    width: 100%;
+    margin-top: -160px;
 }
 
-.popular_books_time {
+.popular_books_period {
     font-size: 18px;
-    width: 75px;
     text-align: center;
     font-family: sans-serif;
     color: rgb(29, 41, 46);
+    cursor: pointer;
+    z-index: 1;
+    padding: 2px 8px;
+    margin: 0;
+    transition: font-size 0.2s, border 0.2s;
+    flex: 1 1 0;
+
+
 }
 
-.popular_books_time_active {
+.popular_books_period_active {
 
     font-size: 22px;
     border:rgb(29, 41, 46) solid 1px;
     border-radius: 50px;
-    padding: 2px 8px;
+    padding: 2px 16px;
+    margin-left: auto;
+    margin-right: auto;
+    flex: none;
 
 }
 
@@ -198,6 +206,7 @@ html {
     border-radius: 5px;
     background-size: cover;
     background-repeat: no-repeat;
+
 }
 
 .popular_books_image_active {
@@ -357,6 +366,8 @@ html {
     color: rgb(29, 41, 46);
     margin-top: -90px;
     margin-left: 80px;
+    font-size: clamp(10px, 2vw, 13px);
+    white-space: nowrap;
 }
 
 .recommendations_book_author {
