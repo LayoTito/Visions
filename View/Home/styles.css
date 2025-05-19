@@ -1,3 +1,4 @@
+
 html {
 
     scrollbar-width: none;
@@ -74,11 +75,11 @@ html {
     width: 50%;
     transform: translate(-50%, -50%);
     font-size: 13px;
-    font-family: LEMON MILK;
+    font-family: LEMON MILK Medium;
     text-align: left;
     color: rgb(29, 41, 46);
-    margin-top: -40px;
-    margin-left: 45px;
+    margin-top: -50px;
+    margin-left: 43px;
 }
 
 .daily_recommendation_image {
@@ -89,7 +90,7 @@ html {
     width: 80px;
     height: 110px;
     margin-left: -80px;
-    margin-top: 100px;
+    margin-top: 110px;
     border-radius: 5px;
     background-image: url(../../Images/daily_recommendation.png);
     background-size: cover;
@@ -106,7 +107,7 @@ html {
     font-family: Arial Bold;
     text-align: justify;
     color: rgb(29, 41, 46);
-    margin-top: 20px;
+    margin-top: 15px;
     margin-left: 49px;
     max-height: 87px;
     overflow: hidden;
@@ -296,7 +297,7 @@ html {
 .recommendations_genre_container {
 
     position: absolute;
-    top: 15%;
+    top: 16%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -327,7 +328,7 @@ html {
     transform: translate(-50%, -50%);
     width: 250px;
     height: 130px;
-    background-color: #4073FF;
+    background-color: #4682b4;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -348,7 +349,7 @@ html {
     background-repeat: no-repeat;
 }
 
-.recommendations_book1_title {
+.recommendations_book_title {
     position: absolute;
     font-size: 13px;
     font-family: LEMON MILK;
@@ -358,54 +359,7 @@ html {
     margin-left: 80px;
 }
 
-.recommendations_book1_author {
-    position: absolute;
-    font-size: 10px;
-    font-family: sans-serif;
-    text-align: center;
-    color: rgb(29, 41, 46);
-    margin-top: -60px;
-    margin-left: 80px;
-}
-
-.starsrating {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-bottom: 2px;
-    margin-right: 13px;
-    filter: invert(1);
-    width: 80px;
-    height: 20px;
-}
-
-.recommendations_book2_container {
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 30px;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 130px;
-    background-color: #4073FF;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.recommendations_book2_title {
-    position: absolute;
-    font-size: 13px;
-    font-family: LEMON MILK;
-    text-align: center;
-    color: rgb(29, 41, 46);
-    margin-top: -90px;
-    margin-left: 80px;
-}
-
-.recommendations_book2_author {
+.recommendations_book_author {
     position: absolute;
     font-size: 10px;
     font-family: sans-serif;
@@ -435,9 +389,25 @@ html {
     right: 0;
     margin-bottom: 2px;
     margin-right: 13px;
-    filter: invert(1);
+    filter: invert(0.8);
     width: 80px;
     height: 20px;
+}
+
+.recommendations_book2_container {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 30px;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 130px;
+    background-color: #4682b4;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .recommendations_book3_container {
@@ -448,52 +418,9 @@ html {
     transform: translate(-50%, -50%);
     width: 250px;
     height: 130px;
-    background-color: #4073FF;
+    background-color: #4682b4;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.recommendations_book3_title {
-    position: absolute;
-    font-size: 13px;
-    font-family: LEMON MILK;
-    text-align: center;
-    color: rgb(29, 41, 46);
-    margin-top: -90px;
-    margin-left: 80px;
-}
-
-.recommendations_book3_author {
-    position: absolute;
-    font-size: 10px;
-    font-family: sans-serif;
-    text-align: center;
-    color: rgb(29, 41, 46);
-    margin-top: -60px;
-    margin-left: 80px;
-}
-
-.recommendations_book3_description {
-    position: absolute;
-    margin-right: -20px;
-    font-size: 10px;
-    width: 140px;
-    font-family: sans-serif;
-    text-align: justify;
-    color: rgb(29, 41, 46);
-    margin-top: 30px;
-    margin-left: 60px;
-}
-
-.starsrating {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-bottom: 2px;
-    margin-right: 13px;
-    filter: invert(1);
-    width: 80px;
-    height: 20px;
 }

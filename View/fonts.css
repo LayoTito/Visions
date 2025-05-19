@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Lemon Milk Light';
+    src: url('../../Fonts/LEMONMILK-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'AMORIA';
+    src: url('../../Fonts/AMORIA.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'LEMON MILK Medium';
+    src: url('../../Fonts/LEMONMILK-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
