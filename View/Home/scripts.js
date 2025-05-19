@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', 
-    function() {
+    async function() {
 
-        dailyLoad();
-        hotPicksLoads();
-        releasesLoads();
-        recommendationLoads();
+        await dailyLoad();
+        await hotPicksLoads();
+        await releasesLoads();
+        await recommendationLoads();
 
         eventListenerHandler();
 
@@ -14,123 +14,81 @@ document.addEventListener('DOMContentLoaded',
 
 function dailyLoad() {
 
-    const img = document.getElementById("daily-image");
-    const desc = document.getElementById("desc");
+    const img = [document.getElementById("daily-image")];
+    const desc = [document.getElementById("desc")];
 
-    loadBookDetails(img, desc, null, null, "https://www.googleapis.com/books/v1/volumes?q=Harry+Potter&maxResults=1", 0);
+    loadBookDetails(img, desc, null, null, "https://www.googleapis.com/books/v1/volumes?q=Harry+Potter&maxResults=1", 1, 0);
 
  }
 
 function hotPicksLoads() {
 
-    const pick1 = document.getElementById("hot-book1");
-    const pick2 = document.getElementById("hot-book2");
-    const pick3 = document.getElementById("hot-book3");
+    const hotPicksImages = document.querySelectorAll("img.popular_books_image");
 
     const url = `https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=3`;
 
-    loadImage(pick1, url, 0);
-    loadImage(pick2, url, 1);
-    loadImage(pick3, url, 2);
+    loadBookDetails(hotPicksImages, null, null, null, url, hotPicksImages.length, 0);
 
 }
 
 
 function releasesLoads() {
 
-    const release1 = document.getElementById("release-book1");
-    const release2 = document.getElementById("release-book2");
-    const release3 = document.getElementById("release-book3");
-    const release4 = document.getElementById("release-book4");
-    const release5 = document.getElementById("release-book5");
-    const release6 = document.getElementById("release-book6");
+    const releaseImages = document.querySelectorAll("img.new_releases_image");
 
     const url = `https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=6`;
 
-    loadImage(release1, url, 0);
-    loadImage(release2, url, 1);
-    loadImage(release3, url, 2);
-    loadImage(release4, url, 3);
-    loadImage(release5, url, 4);
-    loadImage(release6, url, 5);
+    loadBookDetails(releaseImages, null, null, null, url, releaseImages.length, 0);
 
 }
 
 function recommendationLoads() {
 
-    const rec1 = document.getElementById("rec-book1");
-    const rec2 = document.getElementById("rec-book2");
-    const rec3 = document.getElementById("rec-book3");
-    
-    const desc1 = document.getElementById("rec-desc1");
-    const desc2 = document.getElementById("rec-desc2");
-    const desc3 = document.getElementById("rec-desc3");
-    
-    const aut1 = document.getElementById("rec-aut1");
-    const aut2 = document.getElementById("rec-aut2");
-    const aut3 = document.getElementById("rec-aut3");
-    
-    const title1 = document.getElementById("rec-title1");
-    const title2 = document.getElementById("rec-title2");
-    const title3 = document.getElementById("rec-title3");
+    const images = document.querySelectorAll("img.recommendations_book_image");
+    const descriptions = document.querySelectorAll("p.recommendations_book_description");
+    const authors = document.querySelectorAll("h1.recommendations_book_author");
+    const titles = document.querySelectorAll("h1.recommendations_book_title");
 
-    const url = `https://www.googleapis.com/books/v1/volumes?q=subject:romance+fantasy&maxResults=3`;
+    const url = `https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3`;
 
-    loadBookDetails(rec1, desc1, aut1, title1, url, 0);
-    loadBookDetails(rec2, desc2, aut2, title2, url, 1);
-    loadBookDetails(rec3, desc3, aut3, title3, url, 2);
+    loadBookDetails(images, descriptions, authors, titles, url, 3, 0);
 
 }
 
-function loadImage(element, url, index) {
+function loadBookDetails(img, desc, aut, tit, url, quant, index) {
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
             if (data.items && data.items.length > 0) {
-                const book = data.items[index];
-                const title = book.volumeInfo.title;
-                const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
 
-                if (thumbnail) {
-                    element.src = thumbnail;
-                    element.alt = title;
+                for(var i = 0; i < quant; i++, index++) {
+
+                    const book = data.items[index];
+                    const id = book.id;
+                    const title = book.volumeInfo.title;
+                    const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
+                    const description = book.volumeInfo.description;
+                    const author = book.volumeInfo.authors?.[0];
+
+                    if (thumbnail && img) {
+                            
+                        img[i].src = thumbnail;
+                        img[i].alt = title;
+                        img[i].style.setProperty("--id", id)
+
+                    }
+
+                    if (description && desc) { desc[i].innerHTML = description; }
+
+                    if (author && aut) { aut.innerHTML[i] = book.volumeInfo.authors[0]; }
+
+                    if(title && tit) { tit.innerHTML[i] = title } 
+
                 }
 
-            } else {
-                console.log("No books found");
-            }
-        }
-    )
-
-}
-
-function loadBookDetails(img, desc, aut, tit, url, index) {
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data.items && data.items.length > 0) {
-                const book = data.items[index];
-                const title = book.volumeInfo.title;
-                const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
-                const description = book.volumeInfo.description;
-                const author = book.volumeInfo.authors?.[0];
-
-                if (thumbnail) {
-                    img.src = thumbnail;
-                    img.alt = title;
-                }
-
-                if (description) { desc.innerHTML = description; }
-
-                if (author) { aut.innerHTML = book.volumeInfo.authors[0]; }
-
-                if(title) { tit.innerHTML = title }
-
-            } else {
-                console.log("No books found");
-            }
+            } 
+            else { console.log("No books found"); }
         }
     );
 
@@ -166,17 +124,24 @@ function toProfileScreen() { window.location.href = "../Profile/structure.html";
 
 function toSearchScreen() { window.location.href = "../Search/structure.html"; }
 
-function toBookScreen() {
+async function toBookScreen(element) {
+
+    let id = element.style.getPropertyValue("--id");
+    
+    await setCookie("id", id, 1);
 
     window.location.href = "../Book/structure.html";
-    
+
+
 }
 
+function setCookie(c_name, value, exdays) {
 
-document.addEventListener('DOMContentLoaded', function() {
-    dailyLoad();
-    hotPicksLoads();
-    releasesLoads();
-    recommendationLoads();
-    eventListenerHandler();
-});
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+
+    var c_value = encodeURIComponent(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+    
+    document.cookie = c_name + "=" + c_value + "; path=/";
+
+}

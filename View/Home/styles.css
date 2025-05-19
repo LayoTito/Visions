@@ -12,6 +12,10 @@ html {
 
 }
 
+.click {
+    cursor: pointer;
+}
+
 .navigation_bar {
     position: fixed;
     top: 0;
