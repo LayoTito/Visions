@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log(document.cookie);
     setPageData();
+
+    eventListenerHandler()
+
 });
 
 function toHomeScreen() {
@@ -30,7 +33,8 @@ function setPageData() {
 
     console.log(url);
     
-    let image = document.querySelector("div.book_container > img.book_image");
+    let image = document.querySelector("img.book_image");
+    let background = document.querySelector("div.book-background-blur");
     let tit = document.querySelector("div.book_general_info_container > div.title");
     let aut = document.querySelector("div.book_general_info_container > div.author");
     let rat = document.querySelector("div.book_raing_container > div.rating_number");
@@ -54,6 +58,13 @@ function setPageData() {
                     image.src = thumbnail;
                     image.alt = title;
                     image.style.setProperty("--id", id)
+                    background.style.backgroundImage = `url('${image.src}')`;
+
+                    colorjs.average(image.src, { amount: 1 }).then(color => {
+                        console.log(color) // [241, 221, 63]
+                        rat.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+                    })
+                    
                 }
 
                 if (description) { desc.innerHTML = description; }
@@ -68,5 +79,13 @@ function setPageData() {
             else { console.log("No books found"); }
         }
     );
+
+}
+
+function eventListenerHandler() {
+
+    const back = document.querySelector("buttom.book_back_arrow");
+
+    back.addEventListener("click", toHomeScreen, false);
 
 }
