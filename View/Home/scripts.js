@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded',
     async function() {
 
         await dailyLoad();
-        await hotPicksLoads();
         await releasesLoads();
+        await hotPicksLoads("https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3");
         await recommendationLoads();
 
         eventListenerHandler();
@@ -21,11 +21,9 @@ function dailyLoad() {
 
  }
 
-function hotPicksLoads() {
+function hotPicksLoads(url) {
 
     const hotPicksImages = document.querySelectorAll("img.popular_books_image");
-
-    const url = `https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=3`;
 
     loadBookDetails(hotPicksImages, null, null, null, url, hotPicksImages.length, 0);
 
@@ -91,7 +89,6 @@ function loadBookDetails(img, desc, aut, tit, url, quant, index) {
             else { console.log("No books found"); }
         }
     );
-
 }
 
 function eventListenerHandler() {
@@ -99,27 +96,33 @@ function eventListenerHandler() {
     let booksImage = document.querySelectorAll("img.click");
 
     booksImage.forEach(function(element) { 
-        element.addEventListener("click", toBookScreen, false);
+        element.addEventListener("click", function() { toBookScreen(element); }, false);
     });
 
     let hotPicksPeriod = document.querySelectorAll("h1.popular_books_period");
+
     hotPicksPeriod.forEach(function(element) {
+
         element.addEventListener("click", function() {
+            
             document.querySelectorAll('.popular_books_period')
                 .forEach(e => e.classList.remove('popular_books_period_active'));
             this.classList.add('popular_books_period_active');
+
+            let a = this.style.getPropertyValue("--a");
+
+            if(a == "1") { var url = `https://www.googleapis.com/books/v1/volumes?q=subject:drama&maxResults=3`; }
+            else if(a == "2") { var url = `https://www.googleapis.com/books/v1/volumes?q=subject:romance&maxResults=3`; }
+            else if(a == "3") { var url = `https://www.googleapis.com/books/v1/volumes?q=subject:adventure&maxResults=3`; }
+            else { var url = `https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3`; }
+
+            hotPicksLoads(url);
+
         });
     });
 }
 
-function toUppercase(element) {
 
-    document.querySelectorAll("h1.popular_books_period")
-        .forEach(el => el.classList.remove("popular_books_period_active"));
-    element.classList.add("popular_books_period_active");
-
-   
-}
 function toProfileScreen() { window.location.href = "../Profile/structure.html"; }
 
 function toSearchScreen() { window.location.href = "../Search/structure.html"; }
