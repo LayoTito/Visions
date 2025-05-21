@@ -48,20 +48,34 @@ function popupAnimation() {
 
     let id = null;
     const elem = document.getElementById("popup");
-    let pos = 180;
+    let pos = 0;
     clearInterval(id);
     id = setInterval(frame, 4);
     
     function frame() {
-      if (pos == 350) { clearInterval(id); } 
+      if (pos == 120) { clearInterval(id); } 
       else {
-        pos++;
+          elem.style.top = ((pos + 290) + 'px');
+          elem.style.opacity = 0 + (pos / 120);
+          pos++;
+        }
+    }
+}
 
-        elem.style.top = (pos + 'px');
-        elem.style.opacity = 0 + (pos / 350);
-        elem.style.left = 4.35 + '%';
-        elem.style.transform = "scale(" + 1 + ")";
+function popupRegisterAnimation() {
 
-      }
+    let id = null;
+    const elem = document.getElementById("popup_register");
+    let pos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 4);
+    
+    function frame() {
+      if (pos == 120) { clearInterval(id); } 
+      else {
+          elem.style.top = ((pos + 290) + 'px');
+          elem.style.opacity = 0 + (pos / 120);
+          pos++;
+        }
     }
 }

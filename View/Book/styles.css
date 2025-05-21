@@ -1,5 +1,4 @@
 html {
-
     scrollbar-width: none;
 
     background-color: #161616;
@@ -7,36 +6,38 @@ html {
 
     display: flex;
     flex-direction: column;
-
 }
 
-.book_container {
-    
-    position: absolute;
+body {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    top: 0;
-    left: 0;
+    margin: 0;
+    padding: 0;
+
+    gap: 13px;
+    overflow-x: hidden;
+}
+
+.book_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     border-radius: 0px 0px 30px 30px;
     
     overflow: hidden;
 
-    width: 100%;
-    height: 35%;
-
+    width: 100vw;
+    height: 300px;
 }
 
 .book-background-blur {
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
     width: 100%;
     height: 100%;
 
@@ -44,11 +45,9 @@ html {
     background-repeat: no-repeat;
     background-position: center;
     filter: blur(10px);
-
 }
 
 .book_back_arrow {
-
     position: absolute;
 
     cursor: pointer;
@@ -75,14 +74,12 @@ html {
     
     font-size: 30px;
     color: white;
-
 }
 
 .book_image {
-
     position: absolute;
 
-    top: 10%;
+    top: 5%;
     left: 50%;
     transform: translate(-50%, 0);
 
@@ -94,19 +91,16 @@ html {
     box-shadow: 0px 0px 30px #161616a9;
 
     z-index: 1;
-
 }
 
 .book_info_container {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
-    
-    top: 45%;
-    left: 0;
 
-    margin-left: 20px;
+    width: 90%;
 
+    gap: 25px;
 }
 
 .book_general_info_container {
@@ -116,98 +110,71 @@ html {
 }
 
 .title {
-    font-size: 30px;
+    text-align: left;
+
+    font-size: 1.6em;
     font-weight: bold;
-    margin-bottom: -1px;
-    margin-top: 7%;
-    
+    margin-top: 18%;
+
 }
 
 .author {
-    font-size: 18px;
+    font-size: 1.3em;
     opacity: 0.8;
-
-
 }
 
 .book_rating_container {
-    
-    margin-top: 7%;
     position: relative;
     display: flex;
 
+    width: 100%;
+
+    gap: 15px;
 }
 
-.rating_number {
-        
+.rating_number { 
     text-align: center;
     align-content: center;
-    margin-top: 2%;
-    width: 50px;
-    height: 50px;
+
+    width: 25%;
+    height: auto;
+
     background-color: #4682b4;
-    font-size: 20px;
     border-radius: 13px;
 
+    font-size: 20px;
 }
 
 .star_container{
-
     position: relative;
     display: flex;
     flex-direction: column;
-
-    margin-left: 10px;
-    margin-top: 5px;
-
 }
 
 .rating_stars{
-
     background-size:cover;
-    width: 105px;
+    width: 40%;
     filter: invert(1);
-
 }
 
 .amount_review {
-
     color: #b0b3b8;
-
 }
 
-.book_line {
-
-    position: absolute;
-
-    top: 68%;
-    left: 50%;
-    transform: translate(-50%, 0);
+hr {
+    position: relative;
 
     width: 90%;
-
-}
-
-.bellow {
-
-    top: 85%;
-
 }
 
 .buttons_container {
-    position: absolute;
+    position: relative;
     display: flex;
 
-    top: 74%;
-    left: 50%;
-    transform: translate(-50%, 0);
-
     gap: 10px;
-
 }
 
 .plus_icon {
-
     position: absolute;
 
     margin-top: 10px;
@@ -216,11 +183,9 @@ html {
     width: 23px;
 
     filter: invert(1);
-
 }
 
 .button_size {
-
     width: 115px;
     height: 45px;
 
@@ -231,59 +196,32 @@ html {
     color: white;
     font-size: 15px;
     font-weight: bold;
-
 }
 
 .libary {
-
     width: 140px;
 
     background-color: transparent;
 
     border: 3px solid #4b5d77;
-
 }
 
 .description_container {
-
-    position: absolute;
+    position: relative;
     display: flex;
+    
     flex-direction: column;
 
-    top: 92%;
-    left: 0;
-
-    margin-left: 20px;
-
+    width: 90%;
 }
 
 .description_title {
-
-    margin-top: auto;
-
-    font-size: 30px;
-
+    font-size: 2em;
 }
 
 .description_text {
+    margin-top: -18px;
 
-    margin-top: -10px;
-    margin-bottom: auto;
-
-    font-size: 15px;
+    font-size: 1em;
     color: #b0b3b8;
-
-}
-
-.empty_space {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-
-    top: 100%;
-    left: 0;
-
-    width: 100%;
-    height: 20%;
-
 }

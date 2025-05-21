@@ -1,12 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     loadCarouselImages();
+    eventListenerHandler()
 
 })
 
+function eventListenerHandler() {
+
+    const back = document.querySelector(".profile_back_arrow");
+    console.log("Back button found:", back);
+    if (back) {
+        back.addEventListener("click", toHomeScreen, false);
+    } else {
+        alert("Back button not found!");
+    }
+
+}
+
 function loadCarouselImages() {
 
-    const url = 'https://www.googleapis.com/books/v1/volumes?q=subject:martial+arts&maxResults=6';
+    const url = 'https://www.googleapis.com/books/v1/volumes?q=subject:martial+arts&maxResults=7';
 
     let images = document.querySelectorAll("img.reads_book");
 
@@ -15,6 +28,7 @@ function loadCarouselImages() {
 }
 
 function toHomeScreen() {
+    console.log("Button clicked!");
     window.location.href = "../Home/structure.html";
 }
 

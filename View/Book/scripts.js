@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-function toHomeScreen() {
-    window.location.href = "../Home/structure.html";
-}
+function toHomeScreen() { window.location.href = "../Home/structure.html"; }
 
 function getCookie(name) {
 
@@ -60,11 +58,10 @@ function setPageData() {
                     image.style.setProperty("--id", id)
                     background.style.backgroundImage = `url('${image.src}')`;
 
-                    colorjs.average(image.src, { amount: 1 }).then(color => {
-                        console.log(color) // [241, 221, 63]
-                        rat.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-                    })
-                    
+                    //colorjs.average(image.src, { amount: 1 }).then(color => {
+                        //console.log(color) // [241, 221, 63]
+                       // rat.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+                    //})
                 }
 
                 if (description) { desc.innerHTML = description; }
@@ -82,10 +79,19 @@ function setPageData() {
 
 }
 
+function backScreen() {
+    let from = getCookie("from");
+
+    if(from == "home") { toHomeScreen(); }
+    else if(from = "search") { toSearchScreen(); }
+}
+
+function toSearchScreen() { window.location.href = "../Search/structure.html";}
+
 function eventListenerHandler() {
 
     const back = document.querySelector("buttom.book_back_arrow");
 
-    back.addEventListener("click", toHomeScreen, false);
+    back.addEventListener("click", backScreen, false);
 
 }

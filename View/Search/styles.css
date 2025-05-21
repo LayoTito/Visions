@@ -1,17 +1,86 @@
 html {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    scrollbar-width: none;
 
     color: white;
     background-color: #161616;
 
 }
 
-.background_container {
+body {
+    position: relative;
 
+    padding: 12vw 0 0 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.alert {
+
+    position: fixed;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+
+    top: 10%;
+
+    width: 270px;
+    height: 120px;
+
+    background-color: rgba(255, 154, 154, 0.824);
+
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.alert .top {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    padding: 5px 0 0 10px;
+
+    width: 100%;
+    height: 30%;
+
+    border-radius: 5px 5px 0px 0px;
+
+    gap: 10px;
+}
+
+.alert .top .icon {
+    width: 30px;
+    height: 30px;
+}
+
+.alert .top .title {
+    font-size: 25px;
+    color: red;
+}
+
+.alert .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    margin-top: -10px;
+
+    width: 80%;
+    height: auto;
+}
+
+.alert .content .text {
+    font-size: 18px;
+    color: red;
+}
+
+.background_container {
     position: fixed;
     display: flex;
     align-items: center;
@@ -20,25 +89,19 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 .background_visions {
-
     margin-top: auto;
 
     font-size: 50px;
-
 }
 
 .visions_logo{
-
     margin-bottom: auto;
-
 }
 
 .nav_container {
-
     position: fixed;
     display: flex;
     align-items: center;
@@ -48,18 +111,16 @@ html {
     left: 0;
     
     width: 100%;
-    height: 9%;
+    height: 16vw;
     
     background-color: white;
 
     border-radius: 14px;
 
     box-shadow: 0px 1px 10px #16161677;
-
 }
 
 .nav_back_arrow {
-
     cursor: pointer;
     z-index: 1;
 
@@ -73,11 +134,9 @@ html {
     background-color: transparent;
     background-size: cover;
     border: none;
-
 }
 
 .nav_search_bar {
-    
     margin-top: 10px;
     margin-left: 20px;
 
@@ -87,18 +146,28 @@ html {
     border: none;
 
     font-size: 18px;;
+}
 
+.nav_container .send {
+    justify-self: flex-end;
+
+    margin-top: 10px;
+
+    width: 35px;
+    height: 35px;
+
+    background-image: url("../../Images/send.png");
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: none;
 }
 
 .filter_container {
-
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: center;
-
-    top: 8%;
-    left: 50%;
-    transform: translate(-50%, 0%);
 
     width: 80%;
     height: 6%;
@@ -107,23 +176,50 @@ html {
 
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
-
 }
 
 .filter_icon {
-
     margin-top: 7px;
     margin-left: 10px;
 
     width: 30px;
     height: 30px;
-
 }
 
 .filter_text {
-
     margin-left: 12px;
 
     color: black;
+}
 
+.results {
+    position: relative;
+    display: none;
+    flex-direction: column;
+
+    width: 90vw;
+    height: auto;
+
+    gap: 15px;
+}
+
+.results .book-row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+
+    gap: 20px;
+}
+
+.results .book-row img {
+    width: 20%;
+    height: auto;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-radius: 5px;
 }

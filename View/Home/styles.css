@@ -3,13 +3,29 @@ html {
 
     scrollbar-width: none;
 
+
+
     background-color: #161616;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
+    
+
     color: white;
 
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding-top: 65px;
+
+    gap: 13px;
+    overflow-x: hidden;
 }
 
 .click {
@@ -59,108 +75,130 @@ html {
 }
 
 .daily_recommendation_container {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 270px;
-    height: 150px;
-    background-color: #727476;
-    border-radius: 10px;
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.daily_recommendation_title {
-    position: absolute;
-    top: 50%;
+    
     left: 50%;
-    width: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 13px;
-    font-family: LEMON MILK Medium;
-    text-align: left;
-    color: rgb(29, 41, 46);
-    margin-top: -50px;
-    margin-left: 43px;
+    transform: translate(-50%, 0);
+
+
+    width: 95%;
+    height: auto;
+
+    gap: 15px;
+
+    background-color: #727476;
+    
+    border-radius: 10px;
 }
 
 .daily_recommendation_image {
-    position: left;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 110px;
-    margin-left: -80px;
-    margin-top: 110px;
-    border-radius: 5px;
+    position: relative;
+
+    margin-left: 10px;
+
+    width: 25%;
+    height: auto;
+
     background-image: url(../../Images/daily_recommendation.png);
     background-size: cover;
     background-repeat: no-repeat;
+    
+    border-radius: 5px;
+}
+
+.daily_recommendation_container .content-text {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+
+    width: 70%;
+    height: 100%;
+}
+
+.daily_recommendation_title {
+    position: relative;
+
+    white-space: nowrap;
+
+    width: 92%;
+    height: 8px;
+
+    font-size: 1.02em;
+    font-family: LEMON MILK Medium;
+    text-align: left;
+    color: rgb(29, 41, 46);
 }
 
 .daily_recommendation_description {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10px;
-    width: 150px;
+    position: relative;
+
+    width: 92%;
+
+    font-size: 0.9em;
     font-family: Arial Bold;
     text-align: justify;
     color: rgb(29, 41, 46);
-    margin-top: 15px;
-    margin-left: 49px;
-    max-height: 87px;
+
+    max-height: 100px;
     overflow: hidden;
 }
 
 .popular_books_container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 70px;
-    transform: translate(-50%, -50%);
-    width: 270px;
-    height: 300px;
-    max-width: 500px;
-    height: 270px;
-    background-color: #727476;
-    border-radius: 10px;
+    position: relative;
+    
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    padding-bottom: 10px;
+    
+    width: 95%;
+    
+    background-color: #727476;
+    border-radius: 10px;
+    z-index: 1;
 }
+
 .popular_books_title {
-    position: absolute;
-    font-size: 20px;
-    text-align: center;
-    font-family: LEMON MILK;
+
+    font-size: 1.5em;
+    font-family: LEMON MILK Medium;
     text-align: center;
     color: rgb(29, 41, 46);
-    top: 0;
-    margin-top: 5px;
+    z-index: 1;
 }
 
 .popular_books_period_container {
+    position: relative;
     display: flex;
     align-items: center;
+
     gap: 8px;
-    width: 100%;
-    margin-top: -160px;
+    
+    width: 95%;
 }
 
 .popular_books_period {
-    font-size: 15px;
+    padding: 2px 8px;
+    margin: 0;
+    z-index: 1;
+
+    font-size: 1.3em;
     text-align: center;
     font-family: sans-serif;
     color: rgb(29, 41, 46);
+
     cursor: pointer;
-    z-index: 1;
-    padding: 2px 8px;
-    margin: 0;
+    
     transition: font-size 0.2s, border 0.2s;
     flex: 1 1 0;
 
@@ -168,46 +206,47 @@ html {
 }
 
 .popular_books_period_active {
-
-    font-size: 22px;
-    border:rgb(29, 41, 46) solid 1px;
-    border-radius: 50px;
-    padding: 2px 16px;
-    margin-left: auto;
-    margin-right: auto;
     flex: none;
 
+    margin-left: auto;
+    margin-right: auto;
+   
+    padding: 2px 16px;
+
+    font-size: 1.5em;
+
+    border:rgb(29, 41, 46) solid 1px;
+    border-radius: 50px;
 }
 
-.popular_books_line {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: black;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 1px;
-    margin-top: -87px;
-    margin-left: -38px;
+.popular_books_container hr {
+    margin-top: 18px;
+    margin-bottom: 18px;
+
+    width: 95%;
+    height: 0.5px;
+
+    border: none;
+    border-radius: 60px/75%;
+
+    background-color: rgb(29, 41, 46);
 }
 
 .popular_books_books_container {
+    position: relative;
 
-    position: absolute;
     display: flex;
-    margin-top: 80px;
-    margin-left: 10px;
-    margin-right: 10px;
     justify-content: center;
     align-items: center;
-    gap: 15px;
 
+    gap: 15px;
 }
 
 .popular_books_image {
     
-    width: 70px;
-    height: 100px;
+    width: 22%;
+    height: auto;
+
     border-radius: 5px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -216,37 +255,41 @@ html {
 
 .popular_books_image_active {
 
-    width: 90px;
-    height: 150px;
+    width: 28%;
+    height: auto;
 
 }
 
 .new_releases_container {
-    position: absolute;
-    top: 96%;
-    left: 50%;
-    margin-top: 82px;
-    transform: translate(-50%, -50%);
-    width: 270px;
-    height: 300px;
-    background-color: #727476;
-    border-radius: 10px;
+    position: relative;
+
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    padding-bottom: 10px;
+
+    width: 95%;
+    height: auto;
+
+    background-color: #727476;
+    border-radius: 10px;
+
+    gap: 15px;
 }
 
 .new_releases_title {
-    position: static;
-    font-size: 20px;
+    
+    font-size: 1.5em;
     text-align: center;
-    font-family: LEMON MILK;
+    font-family: LEMON MILK medium;
     color: rgb(29, 41, 46);
-    margin-left: -80px;
 }
 
-.seeall_button {
-    position: absolute;
+/*.seeall_button {
     width: 20px;
     height: 20px;
     margin-top: 15px;
@@ -258,185 +301,213 @@ html {
     background-repeat: no-repeat;
     border: none;
     color: rgb(29, 41, 46);
+}*/
+
+.new_releases_container hr {
+
+    margin-top: -12px;
+
+    width: 95%;
+    height: 0.5px;
+
+    border: none;
+    border-radius: 60px/75%;
+
+    background-color: rgb(29, 41, 46);
 }
 
 .new_releases_books_container {
-    width: 100%;
-    height: auto;
-    flex-wrap: wrap;
-    border-radius: 5px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    left: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    flex-direction: column;
 
+    width: 90%;
+    height: auto;
+
+    gap: 20px;
+
+}
+
+.new_releases_books_container .top-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
+
+    gap: 25px;
+}
+
+.new_releases_books_container .bottom-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
+
+    gap: 25px;
 }
 
 .new_releases_image {
 
-    width: 70px;
+    width: 24%;
     height: auto;
+
+    max-height: 110px;
+
     border-radius: 5px;
 
 }
 
 .recommendations_container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 830px;
-    transform: translate(-50%, -50%);
-    width: 270px;
-    height: 550px;
-    background-color: #727476;
-    border-radius: 10px;
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    padding-bottom: 20px;
+
+    width: 95%;
+    height: auto;
+
+    background-color: #727476;
+    border-radius: 10px;
+
+    gap: 15px;
 }
 
 .recommendations_title {
-    position: static;
-    font-size: 17px;
+    font-size: 1.3em;
     text-align: center;
-    font-family: LEMON MILK;
-    text-align: center;
+    font-family: LEMON MILK medium;
     color: rgb(29, 41, 46);
-    margin-top: -470px;
+}
+
+.recommendations_container hr {
+    margin-top: -12px;
+    margin-bottom: -12px;
+
+    width: 95%;
+    height: 0.5px;
+
+    border: none;
+    border-radius: 60px/75%;
+
+    background-color: rgb(29, 41, 46);
 }
 
 .recommendations_genre_container {
-
-    position: absolute;
-    top: 16%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -20px;
-    gap: 10px;
 
+    gap: 10px;
 }
 
 .recommendations_genre {
-
-    font-size: 10px;
-    width: 40px;
+    font-size: 0.9em;
     text-align: center;
     font-family: sans-serif;
     color: rgb(29, 41, 46);
-    
-
 }
 
-.recommendations_book1_container {
-    
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -120px;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 130px;
-    background-color: #4682b4;
-    border-radius: 10px;
+.genre-active {
+    padding: 2px 16px;
+
+    font-size: 1.1em;
+
+    border:rgb(29, 41, 46) solid 1px;
+    border-radius: 50px;
+}
+
+.recommendations_book_container {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 8px;
+
+    width: 90%;
+    height: auto;
+
+    background-color: #4682b4;
+    border-radius: 10px;
+
+    gap: 10px;
 }
 
 .recommendations_book_image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 75px;
-    height: 110px;
-    margin-left: -80px;
-    margin-top: 0px;
-    border-radius: 5px;
+    width: 25%;
+    height: auto;
+
+
     background-size: cover;
+    border-radius: 5px;
     background-repeat: no-repeat;
 }
 
+.recommendations_book_container .text-container{
+
+    display: flex;
+    justify-content: center;
+
+
+    flex-direction: column;
+
+    width: 70%;
+
+    gap: 5px;
+}
+
 .recommendations_book_title {
-    position: absolute;
-    font-size: 13px;
-    font-family: LEMON MILK;
-    text-align: center;
+    align-self: flex-start;
+
+    width: 95%;
+
+    font-family: LEMON MILK medium;
+    text-align: left;
     color: rgb(29, 41, 46);
-    margin-top: -90px;
-    margin-left: 80px;
-    font-size: clamp(10px, 2vw, 13px);
-    white-space: nowrap;
+
+    font-size: clamp(10px, 4vw, 13px);
+
 }
 
 .recommendations_book_author {
-    position: absolute;
-    font-size: 10px;
+    margin: 0;
+
     font-family: sans-serif;
-    text-align: center;
+    text-align: left;
     color: rgb(29, 41, 46);
-    margin-top: -60px;
-    margin-left: 80px;
+
+    font-size: clamp(10px, 3vw, 12px);
 }
 
 .recommendations_book_description {
-    position: absolute;
-    margin-right: -20px;
-    font-size: 10px;
-    width: 140px;
+    width: 100%;
+
+    font-size: clamp(10px, 3vw, 12px);
     font-family: sans-serif;
     text-align: justify;
     color: rgb(29, 41, 46);
-    margin-top: 30px;
-    margin-left: 60px;
+
     max-height: 60px;
     overflow: hidden;
 }
 
 .starsrating {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-bottom: 2px;
-    margin-right: 13px;
+    align-self: flex-end;
+
     filter: invert(0.8);
     width: 80px;
     height: 20px;
-}
-
-.recommendations_book2_container {
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 30px;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 130px;
-    background-color: #4682b4;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.recommendations_book3_container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 180px;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 130px;
-    background-color: #4682b4;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

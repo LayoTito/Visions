@@ -1,42 +1,30 @@
 .reads_container {
 
-    position: absolute;
+    position: relative;
 
     display: flex;
     
     justify-content: center;
     flex-direction: column;
     
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
     width: 100%;
-    height: 150px;
     
     overflow: hidden;
     
 }
 .reads_container .reads_title {
     
-    position: absolute;
+    position: relative;
     
-    font-size: 20px;
-    
-    top: 0;
-
-    margin-top: 1px;
-    margin-left: 30px;
+    font-size: 1.5em;
+    text-indent: 1em;
     
 }
 
 .slider {
 
     width: 100%;
-    height: 80%;
-    
-    margin-top: 30px;
-    padding-top: 5px;
+    height: 30vw;
 
     mask-image: linear-gradient(to right, transparent, black 50%, transparent);
 
@@ -71,7 +59,7 @@
                 translateZ(550px);
     
     animation: carousel_animation 14s linear infinite;
-    animation-delay: calc(((14s/var(--quantity)) * (var(--position) - 1)) - 6s);
+    animation-delay: calc(((12s/var(--quantity)) * (var(--position) - 1)) - 6s);
 
 }
 
