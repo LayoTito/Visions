@@ -4,16 +4,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
+window.addEventListener('scroll', function() {
+    if((this.window.innerHeight + this.window.scrollY) >= this.document.body.offsetHeight) {
+        
+    }
+})
+
 function toHomeScreen() {
     window.location.href = "../Home/structure.html";
 }
 
 function searchForBooks() {
-    let images = document.querySelectorAll("div.book-row > img");
+    createBookStructure(10);
+    
+    let containers = document.querySelectorAll("div.results > div.book")
+    let images = document.querySelectorAll("div.empty > img");
+    let titles = document.querySelectorAll("div.empty > div.content > h1");
+    let authors = document.querySelectorAll("div.empty > div.content > h2");
+    let descriptions = document.querySelectorAll("div.empty > div.content > p");
 
     let url = getInputValue();
 
-    loadBookDetails(images, null, null, null, url, images.length, 0);
+    loadBookDetails(images, descriptions, authors, titles, url, images.length, 0);
+
+    containers.forEach(addClass(containers, "click"), removeClass(containers, "empty")); 
+}
+
+function addClass(element, className) { element.forEach(el => el.classList.add(className)); }
+
+function removeClass(element, className) {element.forEach(el => el.classList.remove(className)); }
+
+function createBookStructure(quantity) {
+    var book = document.querySelector("div.empty");
+    for(var i = 0; i <= quantity; i++) {
+        var newBook = book.cloneNode(true);
+        
+        document.querySelector("div.results").appendChild(newBook);
+    }
 }
 
 function getInputValue() {
@@ -83,7 +110,7 @@ function eventListenerHandler() {
         }
     });
 
-    let booksImage = document.querySelectorAll("div.book-row > img");
+    let booksImage = document.querySelectorAll("div.book > img");
 
     booksImage.forEach(function(element) { 
         element.addEventListener("click", function() { toBookScreen(element); }, false);
@@ -146,4 +173,6 @@ function loadBookDetails(img, desc, aut, tit, url, quant, index) {
             else { console.log("No books found"); }
         }
     );
+
+
 }

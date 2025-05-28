@@ -194,8 +194,11 @@ body {
 
 .results {
     position: relative;
-    display: none;
+
+    display: flex;
     flex-direction: column;
+    
+    align-items: center;
 
     width: 90vw;
     height: auto;
@@ -203,23 +206,63 @@ body {
     gap: 15px;
 }
 
-.results .book-row {
+.results .book {
+
     position: relative;
+
     display: flex;
-    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
 
-    width: 100%;
-    height: auto;
+    padding: 5px;
 
-    gap: 20px;
+    align-items: stretch;
+    
+    width: 90%;
+    aspect-ratio: 3/1;
+
+    border: 1px solid black;
+    border-radius: 10px;
+    
+    background-color: rgba(0, 0, 0, 0.112);
 }
 
-.results .book-row img {
-    width: 20%;
+.book img {
+    width: 25%;
     height: auto;
 
-    background-size: cover;
-    background-repeat: no-repeat;
-
     border-radius: 5px;
+}
+
+.book .content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    max-width: calc(75% - 20px);
+
+    flex-grow: 1;
+}
+
+.content h1 {
+    margin: 3px 0 0 0;
+
+    font-size: 1.2em;
+    white-space: nowrap;
+}
+
+.content h2 {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.838);
+    text-indent: 0.3em;
+    font-size: 0.8em;
+}
+
+.content p {
+    margin: 5px 0 0 0;
+
+    color: rgba(255, 255, 255, 0.838);
+    text-indent: 0.9em;
+    font-size: 0.7em;
 }
