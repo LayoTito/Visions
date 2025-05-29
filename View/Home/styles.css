@@ -1,101 +1,105 @@
 
 html {
-
     scrollbar-width: none;
-
-
 
     background-color: #161616;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    
-
     color: white;
-
 }
 
 body {
     position: relative;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
+    overflow-x: hidden;
+    gap: 13px;
 
     padding-top: 65px;
-
-    gap: 13px;
-    overflow-x: hidden;
 }
 
-.click {
-    cursor: pointer;
-}
-
-.navigation_bar {
+.navigation {
     position: fixed;
+    z-index: 1;
+
     top: 0;
     left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+
+    padding-top: 10px;
+    
     width: 100%;
     height: 60px;
-    padding-top: 10px;
+
     background-color: #161616;
     box-shadow: 0 2px 10px #161616;
-    display: flex;
-    z-index: 1;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.button_navigation_bar {
-    background-color: transparent;
+.navigation .logo {
+    cursor: pointer;
+    color: white;
+
+    margin-left: 15px;
+
     width: 40px;
     height: 40px;
-    margin-left: 15px;
+
+    border: none;
+
+    background-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
-    border: none;
-    color: white;
-    cursor: pointer;
+    
     font-family: AMORIA;
     font-size: 40px;
 }
 
-.button_lupa_navigation_bar {
-    background-color: transparent;
-    background-image: url(../../Images/lupa.png);
-    width: 35px;
-    height: 35px;
-    margin-right: 15px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: none;
+.navigation .lupa {
     color: white;
     cursor: pointer;
+    
+    margin-right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background-color: transparent;
+    background-image: url(../../Images/lupa.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.daily_recommendation_container {
+.daily-recommendation {
     position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     
     left: 50%;
     transform: translate(-50%, 0);
 
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    align-items: center;
 
     width: 95%;
     height: auto;
 
-    gap: 15px;
+    border-radius: 10px;
 
     background-color: #727476;
-    
-    border-radius: 10px;
 }
 
-.daily_recommendation_image {
+.daily-recommendation img {
     position: relative;
 
     margin-left: 10px;
@@ -103,14 +107,18 @@ body {
     width: 25%;
     height: auto;
 
+    border-radius: 5px;
+
     background-image: url(../../Images/daily_recommendation.png);
     background-size: cover;
     background-repeat: no-repeat;
-    
-    border-radius: 5px;
 }
 
-.daily_recommendation_container .content-text {
+.click {
+    cursor: pointer;
+}
+
+.daily-recommendation .text {
     position: relative;
     
     display: flex;
@@ -120,10 +128,11 @@ body {
     height: 100%;
 }
 
-.daily_recommendation_title {
-    position: relative;
-
+.daily-recommendation .text h1{
     white-space: nowrap;
+    color: rgb(29, 41, 46);
+
+    position: relative;
 
     width: 92%;
     height: 8px;
@@ -131,44 +140,47 @@ body {
     font-size: 1.02em;
     font-family: LEMON MILK Medium;
     text-align: left;
-    color: rgb(29, 41, 46);
 }
 
-.daily_recommendation_description {
+.daily-recommendation .text p{
+    color: rgb(29, 41, 46);
+    
     position: relative;
 
+    overflow: hidden;
+
     width: 92%;
+    max-height: 100px;
 
     font-size: 0.9em;
     font-family: Arial Bold;
     text-align: justify;
-    color: rgb(29, 41, 46);
-
-    max-height: 100px;
-    overflow: hidden;
 }
 
-.popular_books_container {
+.popular {
+    z-index: 1;
+
     position: relative;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     
     left: 50%;
     transform: translate(-50%, 0);
-
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
     padding-bottom: 10px;
+
+    align-items: center;
     
     width: 95%;
     
-    background-color: #727476;
     border-radius: 10px;
-    z-index: 1;
+
+    background-color: #727476;
 }
 
-.popular_books_title {
+.popular .title {
 
     font-size: 1.5em;
     font-family: LEMON MILK Medium;
@@ -177,41 +189,41 @@ body {
     z-index: 1;
 }
 
-.popular_books_period_container {
+.popular .periods {
     position: relative;
+
     display: flex;
     align-items: center;
-
     gap: 8px;
     
     width: 95%;
 }
 
-.popular_books_period {
-    padding: 2px 8px;
-    margin: 0;
+.popular .periods h1 {
     z-index: 1;
+    color: rgb(29, 41, 46);
+    cursor: pointer;
+
+    margin: 0;
+    
+    padding: 2px 8px;
+    
+    flex: 1 1 0;
 
     font-size: 1.3em;
     text-align: center;
     font-family: sans-serif;
-    color: rgb(29, 41, 46);
 
-    cursor: pointer;
-    
     transition: font-size 0.2s, border 0.2s;
-    flex: 1 1 0;
-
-
 }
 
-.popular_books_period_active {
-    flex: none;
-
+.popular .periods .active {
     margin-left: auto;
     margin-right: auto;
-   
+    
     padding: 2px 16px;
+    
+    flex: none;
 
     font-size: 1.5em;
 
@@ -219,7 +231,7 @@ body {
     border-radius: 50px;
 }
 
-.popular_books_container hr {
+.popular hr {
     margin-top: 18px;
     margin-bottom: 18px;
 
@@ -232,57 +244,52 @@ body {
     background-color: rgb(29, 41, 46);
 }
 
-.popular_books_books_container {
+.popular .books {
     position: relative;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 15px;
 }
 
-.popular_books_image {
-    
+.popular .books img {
     width: 22%;
     height: auto;
 
     border-radius: 5px;
+
     background-size: cover;
     background-repeat: no-repeat;
-
 }
 
-.popular_books_image_active {
-
+.popular .books .active {
     width: 28%;
     height: auto;
-
 }
 
-.new_releases_container {
+.new-releases {
     position: relative;
+
+    left: 50%;
+    transform: translate(-50%, 0);
 
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    left: 50%;
-    transform: translate(-50%, 0);
+    gap: 15px;
 
     padding-bottom: 10px;
 
     width: 95%;
     height: auto;
 
-    background-color: #727476;
     border-radius: 10px;
 
-    gap: 15px;
+    background-color: #727476;
 }
 
-.new_releases_title {
-    
+.new-releases .title {
     font-size: 1.5em;
     text-align: center;
     font-family: LEMON MILK medium;
@@ -304,7 +311,6 @@ body {
 }*/
 
 .new_releases_container hr {
-
     margin-top: -12px;
 
     width: 95%;
@@ -316,84 +322,82 @@ body {
     background-color: rgb(29, 41, 46);
 }
 
-.new_releases_books_container {
+.new-releases .books {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+    gap: 20px;
+
+    align-items: center;
 
     width: 90%;
     height: auto;
-
-    gap: 20px;
-
 }
 
-.new_releases_books_container .top-container {
+.new-releases .books .top {
     position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 25px;
 
     width: 100%;
     height: auto;
-
-    gap: 25px;
 }
 
-.new_releases_books_container .bottom-container {
+.new-releases .books .bottom {
     position: relative;
+
     display: flex;
     justify-content: center;
+    gap: 25px;
+    
     align-items: center;
-
+    
     width: 100%;
     height: auto;
-
-    gap: 25px;
 }
 
-.new_releases_image {
-
+.new-releases .books img {
     width: 24%;
     height: auto;
-
     max-height: 110px;
 
     border-radius: 5px;
-
 }
 
-.recommendations_container {
+.recommendations {
     position: relative;
 
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-
+    gap: 15px;
+    
     left: 50%;
     transform: translate(-50%, 0);
-
+    
     padding-bottom: 20px;
+    
+    align-items: center;
 
     width: 95%;
     height: auto;
 
-    background-color: #727476;
     border-radius: 10px;
 
-    gap: 15px;
+    background-color: #727476;
 }
 
-.recommendations_title {
+.recommendations .title {
     font-size: 1.3em;
     text-align: center;
     font-family: LEMON MILK medium;
     color: rgb(29, 41, 46);
 }
 
-.recommendations_container hr {
+.recommendations hr {
     margin-top: -12px;
     margin-bottom: -12px;
 
@@ -406,22 +410,22 @@ body {
     background-color: rgb(29, 41, 46);
 }
 
-.recommendations_genre_container {
+.genres {
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 10px;
 }
 
-.recommendations_genre {
+.genres h1 {
+    color: rgb(29, 41, 46);
+
     font-size: 0.9em;
     text-align: center;
     font-family: sans-serif;
-    color: rgb(29, 41, 46);
 }
 
-.genre-active {
+.genres .active {
     padding: 2px 16px;
 
     font-size: 1.1em;
@@ -430,78 +434,75 @@ body {
     border-radius: 50px;
 }
 
-.recommendations_book_container {
+.recommendations .books {
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    gap: 10px;
+    
     padding: 8px;
+
+    align-items: center;
 
     width: 90%;
     height: auto;
 
-    background-color: #4682b4;
     border-radius: 10px;
 
-    gap: 10px;
+    background-color: #4682b4;
 }
 
-.recommendations_book_image {
+.recommendations .book .cover {
     width: 25%;
     height: auto;
 
+    border-radius: 5px;
 
     background-size: cover;
-    border-radius: 5px;
     background-repeat: no-repeat;
 }
 
-.recommendations_book_container .text-container{
-
+.recommendations .book .text{
     display: flex;
     justify-content: center;
-
-
     flex-direction: column;
+    gap: 5px;
 
     width: 70%;
-
-    gap: 5px;
 }
 
-.recommendations_book_title {
+.recommendations .book .title {
+    color: rgb(29, 41, 46);
+
     align-self: flex-start;
 
     width: 95%;
 
     font-family: LEMON MILK medium;
-    text-align: left;
-    color: rgb(29, 41, 46);
-
     font-size: clamp(10px, 4vw, 13px);
-
+    text-align: left;
 }
 
-.recommendations_book_author {
+.recommendations .book .author {
+    color: rgb(29, 41, 46);
+
     margin: 0;
 
     font-family: sans-serif;
-    text-align: left;
-    color: rgb(29, 41, 46);
-
     font-size: clamp(10px, 3vw, 12px);
+    text-align: left;
 }
 
-.recommendations_book_description {
+.recommendations .book .description {
+    color: rgb(29, 41, 46);
+    
+    overflow: hidden;
+
     width: 100%;
+    max-height: 60px;
 
     font-size: clamp(10px, 3vw, 12px);
     font-family: sans-serif;
     text-align: justify;
-    color: rgb(29, 41, 46);
-
-    max-height: 60px;
-    overflow: hidden;
 }
 
 .starsrating {

@@ -1,111 +1,77 @@
+import { loadBookDetails } from '../../library.js';
+import { toSearchScreen } from '../../library.js';
+import { toProfileScreen } from '../../library.js';
+
 document.addEventListener('DOMContentLoaded', 
     async function() {
-
-        await dailyLoad();
-        await releasesLoads();
-        await hotPicksLoads("https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3");
-        await recommendationLoads(`https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3`);
-
+        await loadsHandler
         eventListenerHandler();
-
     }
 );
 
+function loadsHandler() {
+    dailyLoad();
+    releasesLoads();
+    popularLoads("https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3");
+    recommendationLoads(`https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3`);
+}
 
 function dailyLoad() {
-
     const img = [document.getElementById("daily-image")];
     const desc = [document.getElementById("desc")];
 
     loadBookDetails(img, desc, null, null, "https://www.googleapis.com/books/v1/volumes?q=Harry+Potter&maxResults=1", 1, 0);
-
  }
 
-function hotPicksLoads(url) {
+function popularLoads(url) {
+    const popularImages = document.querySelectorAll("div.popular > div.books > img");
 
-    const hotPicksImages = document.querySelectorAll("img.popular_books_image");
-
-    loadBookDetails(hotPicksImages, null, null, null, url, hotPicksImages.length, 0);
-
+    loadBookDetails(popularImages, null, null, null, url, hotPicksImages.length, 0);
 }
 
-
 function releasesLoads() {
-
-    const releaseImages = document.querySelectorAll("img.new_releases_image");
+    const releaseImages = document.querySelectorAll("div.new-releases > div.books > img");
 
     const url = `https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=6`;
 
     loadBookDetails(releaseImages, null, null, null, url, releaseImages.length, 0);
-
 }
 
 function recommendationLoads(url) {
-
-    const images = document.querySelectorAll("img.recommendations_book_image");
-    const descriptions = document.querySelectorAll("p.recommendations_book_description");
-    const authors = document.querySelectorAll("h1.recommendations_book_author");
-    const titles = document.querySelectorAll("h1.recommendations_book_title");
+    const images = document.querySelectorAll("div.recommendations > div.books > img.cover");
+    const titles = document.querySelectorAll("div.recommendations > div.books > div.text> h1.title");
+    const authors = document.querySelectorAll("div.recommendations > div.books > div.text> h1.authors");
+    const descriptions = document.querySelectorAll("div.recommendations > div.books > div.text> p.description");
 
     loadBookDetails(images, descriptions, authors, titles, url, images.length, 0);
-
-}
-
-function loadBookDetails(img, desc, aut, tit, url, quant, index) {
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data.items && data.items.length > 0) {
-
-                for(var i = 0; i < quant; i++, index++) {
-
-                    const book = data.items[index];
-                    const id = book.id;
-                    const title = book.volumeInfo.title;
-                    const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
-                    const description = book.volumeInfo.description;
-                    const author = book.volumeInfo.authors?.[0];
-
-                    if (thumbnail && img) {
-                            
-                        img[i].src = thumbnail;
-                        img[i].alt = title;
-                        img[i].style.setProperty("--id", id)
-
-                    }
-
-                    if (description && desc) { desc[i].innerHTML = description; }
-
-                    if (author && aut) { aut[i].innerHTML = author; }
-
-                    if(title && tit) { tit[i].innerHTML = title; } 
-
-                }
-
-            } 
-            else { console.log("No books found"); }
-        }
-    );
 }
 
 function eventListenerHandler() {
+    booksImageHandler();
+    popularHandler();
+    recomendationsHandler();
+    lupaHandler();
+    profileHandler();
+}
 
+function booksImageHandler() {
     let booksImage = document.querySelectorAll("img.click");
 
     booksImage.forEach(function(element) { 
         element.addEventListener("click", function() { toBookScreen(element); }, false);
     });
+}
 
-    let hotPicksPeriod = document.querySelectorAll("h1.popular_books_period");
+function popularHandler() {
+    let hotPicksPeriod = document.querySelectorAll("h1.div.popular > div.periods > h1");
 
     hotPicksPeriod.forEach(function(element) {
 
         element.addEventListener("click", function() {
             
-            document.querySelectorAll('.popular_books_period')
-                .forEach(e => e.classList.remove('popular_books_period_active'));
-            this.classList.add('popular_books_period_active');
+            document.querySelectorAll('.div.popular > div.periods > h1')
+                .forEach(e => e.classList.remove('active'));
+            this.classList.add('active');
 
             let a = this.style.getPropertyValue("--a");
 
@@ -115,18 +81,19 @@ function eventListenerHandler() {
             else { var url = `https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3`; }
 
             hotPicksLoads(url);
-
         });
     });
+}
 
-    let recommendations = document.querySelectorAll("h1.recommendations_genre");
+function recomendationsHandler() {
+    let recommendations = document.querySelectorAll("div.recommendations > div.genres > h1");
 
     recommendations.forEach(function(element) {
         element.addEventListener("click", function() {
             
-            document.querySelectorAll('.recommendations_genre')
-                .forEach(e => e.classList.remove('genre-active'));
-            this.classList.add('genre-active');
+            document.querySelectorAll('div.recommendations > div.genres > h1')
+                .forEach(e => e.classList.remove('active'));
+            this.classList.add('active');
 
             let a = this.style.getPropertyValue("--a");
 
@@ -137,33 +104,19 @@ function eventListenerHandler() {
             else { var url = `https://www.googleapis.com/books/v1/volumes?q=subject:thriller&maxResults=3`; }
 
             recommendationLoads(url);
-
         });
     });
-
 }
 
 
-function toProfileScreen() { window.location.href = "../Profile/structure.html"; }
+function lupaHandler() {
+    let lupa = document.querySelector("div.navigation > button.lupa");
 
-function toSearchScreen() { window.location.href = "../Search/structure.html"; }
-
-async function toBookScreen(element) {
-    let id = element.style.getPropertyValue("--id");
-    
-    setCookie("id", id, 1);
-    setCookie("from", "home", 1);
-
-    window.location.href = "../Book/structure.html";
+    lupa.addEventListener("click", toSearchScreen);
 }
 
-function setCookie(c_name, value, exdays) {
+function profileHandler() {
+    let profile = document.querySelector("div.navigation > button.logo");
 
-    var exdate = new Date();
-    exdate.setDate(exdate.getDate() + exdays);
-
-    var c_value = encodeURIComponent(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
-    
-    document.cookie = c_name + "=" + c_value + "; path=/";
-
+    profile.addEventListener("click", toProfileScreen);
 }

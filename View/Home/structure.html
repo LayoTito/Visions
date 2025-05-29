@@ -6,16 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../fonts.css">
-    <script src="scripts.js"></script>
+
+    <script type="module" src="scripts.js"></script>
+    
 </head>
 <body>
 
-    <div class = "navigation_bar">
+    <div class="navigation">
 
-        <button class = "button_navigation_bar" onclick="toProfileScreen()">V</button>
-        <button class = "button_lupa_navigation_bar" onclick="toSearchScreen()" title="Lupa"></button>
+        <button class="logo">V</button>
+        <button class="lupa" title="Lupa"></button>
 
     </div>
 
@@ -27,136 +30,132 @@
 
 </div>-->
 
-<div class = "daily_recommendation_container">
+<div class="daily-recommendation">
     
-    <img id="daily-image" class="daily_recommendation_image click">
+    <img id="daily-image" class="click">
 
-    <div class="content-text">
+    <div class="text">
 
-        <h1 class = "daily_recommendation_title">Recomendação diária</h1>
+        <h1>Recomendação diária</h1>
     
-        <p class = "daily_recommendation_description" id="desc"></p>
+        <p id="desc"></p>
 
     </div>
 </div>
 
-<div class = "popular_books_container">
+<div class="popular">
 
-    <h1 class = "popular_books_title">Em Alta</h1>
+    <h1 class="title">Em Alta</h1>
 
-    <div class = "popular_books_period_container">
-    <h1 class = "popular_books_period" style="--a: 1">Semanal</h1>
-    <h1 class = "popular_books_period popular_books_period_active" style="--ia: 2">Mensal</h1>
-    <h1 class = "popular_books_period" style="--a: 3">Anual</h1>
+    <div class="periods">
+
+        <h1 style="--a: 1">Semanal</h1>
+        <h1 class="active" style="--ia: 2">Mensal</h1>
+        <h1 style="--a: 3">Anual</h1>
+        
     </div>
 
     <hr>
 
-    <div class = "popular_books_books_container">
+    <div class="books">
 
-        <img class = "popular_books_image click">
-        <img class = "popular_books_image popular_books_image_active click">
-        <img class = "popular_books_image click">
+        <img class="click">
+        <img class="active click">
+        <img class="click">
 
     </div>
-
 </div>
 
-<div class = "new_releases_container">
+<div class="new-releases">
 
-    <h1 class = "new_releases_title">Lançamentos</h1>
+    <h1 class="title">Lançamentos</h1>
     <!--<button class = "seeall_button" onclick="toSeeAllScreen()" title="Expandir"></button>-->
 
     <hr>
 
-    <div class = "new_releases_books_container">
+    <div class="books">
+        <div class="top">
 
-        <div class="top-container">
-
-            <img class = "new_releases_image click">
-            <img class = "new_releases_image click">
-            <img class = "new_releases_image click">
+            <img class="click">
+            <img class="click">
+            <img class="click">
 
         </div>
 
-        <div class="bottom-container">
+        <div class="bottom">
 
-            <img class = "new_releases_image click">
-            <img class = "new_releases_image click">
-            <img class = "new_releases_image click">
+            <img class = "click">
+            <img class = "click">
+            <img class = "click">
 
         </div>
     </div>
 </div>
 
-<div class = "recommendations_container">
+<div class="recommendations">
 
-    <h1 class = "recommendations_title">Recomendados para você</h1>
+    <h1 class="title">Recomendados para você</h1>
 
     <hr>
     
-    <div class = "recommendations_genre_container">
+    <div class="genres">
 
-        <h1 class = "recommendations_genre genre-active" style="--a: 1">Fantasia</h1>
-        <h1 class = "recommendations_genre" style="--a: 2">Horror</h1>
-        <h1 class = "recommendations_genre" style="--a: 3">Romance</h1>
-        <h1 class = "recommendations_genre" style="--a: 4">Sci-fi</h1>
-        <h1 class = "recommendations_genre" style="--a: 5">Terror</h1>
+        <h1 class="active" style="--a: 1">Fantasia</h1>
+        <h1 style="--a: 2">Horror</h1>
+        <h1 style="--a: 3">Romance</h1>
+        <h1 style="--a: 4">Sci-fi</h1>
+        <h1 style="--a: 5">Terror</h1>
 
     </div>
 
-    <div class = "recommendations_book_container">
+    <div class="books">
                     
-        <img class = "recommendations_book_image click">
+        <img clas ="cover click">
 
-        <div class="text-container">
+        <div class="text">
 
-            <h1 class = "recommendations_book_title"></h1>
-            <h1 class = "recommendations_book_author"></h1>
+            <h1 class="title"></h1>
+            <h1 class="author"></h1>
     
-            <p class = "recommendations_book_description"></p>
-    
-            <img src="../../Images/star_rating_icon.png" class = "starsrating" alt = "">
-
-        </div>
-        
-    </div>
-    
-
-    <div class = "recommendations_book_container">
-                
-        <img class = "recommendations_book_image click">
-
-        <div class="text-container">
-
-            <h1 class = "recommendations_book_title"></h1>
-            <h1 class = "recommendations_book_author"></h1>
-    
-            <p class = "recommendations_book_description"></p>
+            <p class="description"></p>
     
             <img src="../../Images/star_rating_icon.png" class = "starsrating" alt = "">
 
-        </div>
-
+        </div>  
     </div>
-
-    <div class = "recommendations_book_container">
-            
-        <img class = "recommendations_book_image click">
-
-        <div class="text-container">
-
-            <h1 class = "recommendations_book_title"></h1>
-            <h1 class = "recommendations_book_author"></h1>
     
-            <p class = "recommendations_book_description"></p>
+
+    <div class="books">
+                    
+        <img clas ="cover click">
+
+        <div class="text">
+
+            <h1 class="title"></h1>
+            <h1 class="author"></h1>
+    
+            <p class="description"></p>
     
             <img src="../../Images/star_rating_icon.png" class = "starsrating" alt = "">
 
-        </div>
-
+        </div>    
     </div>
+
+    <div class="books">
+                    
+        <img clas ="cover click">
+
+        <div class="text">
+
+            <h1 class="title"></h1>
+            <h1 class="author"></h1>
     
+            <p class="description"></p>
+    
+            <img src="../../Images/star_rating_icon.png" class = "starsrating" alt = "">
+
+        </div>   
+    </div>
 </div>
 </body>
 </html>
