@@ -22,7 +22,7 @@ body {
     overflow-x: hidden;
 }
 
-.book_container {
+.wallpaper {
     position: relative;
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@ body {
     height: 300px;
 }
 
-.book-background-blur {
+.wallpaper .blur {
     width: 100%;
     height: 100%;
 
@@ -47,7 +47,7 @@ body {
     filter: blur(10px);
 }
 
-.book_back_arrow {
+.back-arrow {
     position: absolute;
 
     cursor: pointer;
@@ -76,7 +76,7 @@ body {
     color: white;
 }
 
-.book_image {
+.cover {
     position: absolute;
 
     top: 5%;
@@ -93,7 +93,7 @@ body {
     z-index: 1;
 }
 
-.book_info_container {
+.book-content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -103,13 +103,13 @@ body {
     gap: 25px;
 }
 
-.book_general_info_container {
+.book-content .text {
     position: relative;
     flex-direction: column;
     color: #eeeeee;
 }
 
-.title {
+.book-content .text .title {
     text-align: left;
 
     font-size: 1.6em;
@@ -118,12 +118,12 @@ body {
 
 }
 
-.author {
+.book-content .text .author {
     font-size: 1.3em;
     opacity: 0.8;
 }
 
-.book_rating_container {
+.rating {
     position: relative;
     display: flex;
 
@@ -132,7 +132,7 @@ body {
     gap: 15px;
 }
 
-.rating_number { 
+.rating .number { 
     text-align: center;
     align-content: center;
 
@@ -145,19 +145,19 @@ body {
     font-size: 20px;
 }
 
-.star_container{
+.rating .rigth {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.rating_stars{
+.rating .right .stars{
     background-size:cover;
     width: 40%;
     filter: invert(1);
 }
 
-.amount_review {
+.rating .rigth .review {
     color: #b0b3b8;
 }
 
@@ -167,14 +167,14 @@ hr {
     width: 90%;
 }
 
-.buttons_container {
+.buttons {
     position: relative;
     display: flex;
 
     gap: 10px;
 }
 
-.plus_icon {
+/*.plus_icon {
     position: absolute;
 
     margin-top: 10px;
@@ -183,9 +183,9 @@ hr {
     width: 23px;
 
     filter: invert(1);
-}
+}*/
 
-.button_size {
+.buttons button {
     width: 115px;
     height: 45px;
 
@@ -198,7 +198,7 @@ hr {
     font-weight: bold;
 }
 
-.libary {
+.buttons .libary {
     width: 140px;
 
     background-color: transparent;
@@ -206,7 +206,7 @@ hr {
     border: 3px solid #4b5d77;
 }
 
-.description_container {
+.description {
     position: relative;
     display: flex;
     
@@ -215,11 +215,11 @@ hr {
     width: 90%;
 }
 
-.description_title {
+.description .title {
     font-size: 2em;
 }
 
-.description_text {
+.description .text {
     margin-top: -18px;
 
     font-size: 1em;

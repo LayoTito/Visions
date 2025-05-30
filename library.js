@@ -11,6 +11,8 @@ export function toBookScreen(element) {
     window.location.href = "../Book/structure.html";
 }
 
+export function toHomeScreen() { window.location.href = "../Home/structure.html"; }
+
 export function loadBookDetails(img, desc, aut, tit, url, quant, index) {
 
     fetch(url)
@@ -56,4 +58,16 @@ function setCookie(name, value, exdays) {
     var value = encodeURIComponent(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
     
     document.cookie = name + "=" + value + "; path=/";
+}
+
+export function getCookie(name) {
+    let cookieArr = document.cookie.split(";");
+
+    for (let i = 0; i < cookieArr.length; i++) {
+        let cookiePair = cookieArr[i].split("=");
+
+        if (name == cookiePair[0].trim()) {
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
 }
