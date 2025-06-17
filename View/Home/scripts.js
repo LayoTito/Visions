@@ -1,10 +1,11 @@
 import { loadBookDetails } from '../../library.js';
 import { toSearchScreen } from '../../library.js';
 import { toProfileScreen } from '../../library.js';
+import { toBookScreen } from '../../library.js';
 
 document.addEventListener('DOMContentLoaded', 
     async function() {
-        await loadsHandler
+        await loadsHandler();
         eventListenerHandler();
     }
 );
@@ -13,7 +14,7 @@ function loadsHandler() {
     dailyLoad();
     releasesLoads();
     popularLoads("https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3");
-    recommendationLoads(`https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3`);
+    recommendationLoads(`https://www.googleapis.com/books/v1/volumes?q=subject:romance&maxResults=3`);
 }
 
 function dailyLoad() {
@@ -26,22 +27,24 @@ function dailyLoad() {
 function popularLoads(url) {
     const popularImages = document.querySelectorAll("div.popular > div.books > img");
 
-    loadBookDetails(popularImages, null, null, null, url, hotPicksImages.length, 0);
+    loadBookDetails(popularImages, null, null, null, url, popularImages.length, 0);
 }
 
 function releasesLoads() {
-    const releaseImages = document.querySelectorAll("div.new-releases > div.books > img");
+    const releaseImages = document.querySelectorAll("div.new-releases > div.books img");
 
-    const url = `https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=6`;
+    const url = "https://www.googleapis.com/books/v1/volumes?q=subject:humor";
 
-    loadBookDetails(releaseImages, null, null, null, url, releaseImages.length, 0);
+    loadBookDetails(releaseImages, null, null, null, url, 6, 0);
 }
 
 function recommendationLoads(url) {
     const images = document.querySelectorAll("div.recommendations > div.books > img.cover");
-    const titles = document.querySelectorAll("div.recommendations > div.books > div.text> h1.title");
-    const authors = document.querySelectorAll("div.recommendations > div.books > div.text> h1.authors");
-    const descriptions = document.querySelectorAll("div.recommendations > div.books > div.text> p.description");
+    const titles = document.querySelectorAll("div.recommendations > div.books > div.text > h1.title");
+    const authors = document.querySelectorAll("div.recommendations > div.books > div.text > h1.author");
+    const descriptions = document.querySelectorAll("div.recommendations > div.books > div.text > p.description");
+
+    console.log(images, titles, authors, descriptions);
 
     loadBookDetails(images, descriptions, authors, titles, url, images.length, 0);
 }
@@ -63,13 +66,13 @@ function booksImageHandler() {
 }
 
 function popularHandler() {
-    let hotPicksPeriod = document.querySelectorAll("h1.div.popular > div.periods > h1");
+    let hotPicksPeriod = document.querySelectorAll("div.popular > div.periods > h1");
 
     hotPicksPeriod.forEach(function(element) {
 
         element.addEventListener("click", function() {
             
-            document.querySelectorAll('.div.popular > div.periods > h1')
+            document.querySelectorAll('div.popular > div.periods > h1')
                 .forEach(e => e.classList.remove('active'));
             this.classList.add('active');
 
@@ -80,7 +83,7 @@ function popularHandler() {
             else if(a == "3") { var url = `https://www.googleapis.com/books/v1/volumes?q=subject:adventure&maxResults=3`; }
             else { var url = `https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=3`; }
 
-            hotPicksLoads(url);
+            popularLoads(url)
         });
     });
 }

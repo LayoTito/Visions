@@ -16,40 +16,38 @@ export function toHomeScreen() { window.location.href = "../Home/structure.html"
 export function loadBookDetails(img, desc, aut, tit, url, quant, index) {
 
     fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data.items && data.items.length > 0) {
+    .then(response => response.json())
+    .then(data => {
+        if (data.items && data.items.length > 0) {
+            for(var i = 0; i < quant; i++) {
+                const book = data.items[index + i];
+                const id = book.id;
+                const title = book.volumeInfo.title;
+                const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
+                const description = book.volumeInfo.description;
+                const author = book.volumeInfo.authors?.[0];
 
-                for(var i = 0; i < quant; i++, index++) {
-
-                    const book = data.items[index];
-                    const id = book.id;
-                    const title = book.volumeInfo.title;
-                    const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
-                    const description = book.volumeInfo.description;
-                    const author = book.volumeInfo.authors?.[0];
-
-                    if (thumbnail && img) {
-                            
-                        img[i].src = thumbnail;
-                        img[i].alt = title;
-                        img[i].style.setProperty("--id", id)
-
-                    }
-
-                    if (description && desc) { desc[i].innerHTML = description; }
-
-                    if (author && aut) { aut[i].innerHTML = author; }
-
-                    if(title && tit) { tit[i].innerHTML = title; } 
+                if (thumbnail && img) {
+                        
+                    img[i].src = thumbnail;
+                    img[i].alt = title;
+                    img[i].style.setProperty("--id", id)
 
                 }
 
-            } 
-            else { console.log("No books found"); }
-        }
-    );
-}
+                if (description && desc) { desc[i].innerHTML = description; }
+
+                if (author && aut) { aut[i].innerHTML = author; }
+
+                if(title && tit) { tit[i].innerHTML = title; } 
+            
+            }
+           
+        }            
+        else { console.log("No books found"); }
+    }
+    
+);}
 
 function setCookie(name, value, exdays) {
     var exdate = new Date();

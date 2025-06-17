@@ -310,10 +310,10 @@ body {
     color: rgb(29, 41, 46);
 }*/
 
-.new_releases_container hr {
+.new-releases hr {
     margin-top: -12px;
 
-    width: 95%;
+    width: 95%  ;
     height: 0.5px;
 
     border: none;
@@ -391,6 +391,8 @@ body {
 }
 
 .recommendations .title {
+    white-space: nowrap;
+
     font-size: 1.3em;
     text-align: center;
     font-family: LEMON MILK medium;
@@ -436,7 +438,6 @@ body {
 
 .recommendations .books {
     display: flex;
-    justify-content: center;
     gap: 10px;
     
     padding: 8px;
@@ -451,7 +452,7 @@ body {
     background-color: #4682b4;
 }
 
-.recommendations .book .cover {
+.recommendations .books .cover {
     width: 25%;
     height: auto;
 
@@ -470,7 +471,7 @@ body {
     width: 70%;
 }
 
-.recommendations .book .title {
+.recommendations .books .title {
     color: rgb(29, 41, 46);
 
     align-self: flex-start;
@@ -482,7 +483,7 @@ body {
     text-align: left;
 }
 
-.recommendations .book .author {
+.recommendations .books .author {
     color: rgb(29, 41, 46);
 
     margin: 0;
@@ -492,7 +493,7 @@ body {
     text-align: left;
 }
 
-.recommendations .book .description {
+.recommendations .books .description {
     color: rgb(29, 41, 46);
     
     overflow: hidden;
