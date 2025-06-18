@@ -53,8 +53,8 @@
 
     <div class="buttons">
 
-        <button class="libary" onclick="addToLibrary()">Estante</button>
-        <button onclick="readNow()">Resenha</button>
+        <button class="libary">Estante</button>
+        <button class="open-review">Resenha</button>
 
     </div>
 
@@ -66,6 +66,47 @@
         <p class="text"></p>
 
     </div>
+
+    <div class="estantepopup">
+
+        <div class="popup-content">
+            <h1>Adicionar à Estante</h1>
+            <button class="close" onclick="togglePopup()">X</button>
+            <div class="estante-list">
+                <label><input type="checkbox" value="Lido"> Lido</label>
+                <label><input type="checkbox" value="Lendo"> Lendo</label>
+                <label><input type="checkbox" value="Desejado"> Desejado</label>
+                <label><input type="checkbox" value="Favorito"> Favorito</label>
+            </div>
+            <button class="confirm" onclick="confirmSelection()">CONFIRMAR</button>
+        </div>
+
+
+    </div>
+
+    <div class = "resenhapopup">
+
+        <div class="popup-content">
+
+            <h1>Resenha</h1>
+            <button class="close" onclick="togglePopup()">X</button>
+            <textarea class="review-text" placeholder="Escreva sua resenha aqui..."></textarea>
+            <button class="submit-review" onclick="submitReview()">PUBLICAR</button>
+
+             <div class="rating-stars">
+                <span class="heart" title="Favoritar">&#10084;</span>
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    
     
 </body>
 </html>
