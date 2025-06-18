@@ -27,7 +27,10 @@ function searchForBooks() {
 
     loadBookDetails(images, descriptions, authors, titles, url, images.length, 0);
 
-    containers.forEach(addClass(containers, "click"), removeClass(containers, "empty")); 
+    containers.forEach(el => {
+        addClass([el], "click");
+        removeClass([el], "empty");
+    });
 }
 
 function addClass(element, className) { element.forEach(el => el.classList.add(className)); }
