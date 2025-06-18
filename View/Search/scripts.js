@@ -1,12 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
+import { loadBookDetails } from "../../library.js"
 
+let gBook;
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+    gBook = document.querySelector("div.empty");
     eventListenerHandler();
+    document.querySelector("div.empty").remove();
+    
 
 })
 
 window.addEventListener('scroll', function() {
     if((this.window.innerHeight + this.window.scrollY) >= this.document.body.offsetHeight) {
         
+        searchForBooks();
+
     }
 })
 
@@ -14,8 +23,10 @@ function toHomeScreen() {
     window.location.href = "../Home/structure.html";
 }
 
-function searchForBooks() {
-    createBookStructure(10);
+var index = 0;
+async function searchForBooks() {
+    await createBookStructure(10);
+    foda();
     
     let containers = document.querySelectorAll("div.results > div.book")
     let images = document.querySelectorAll("div.empty > img");
@@ -31,16 +42,17 @@ function searchForBooks() {
         addClass([el], "click");
         removeClass([el], "empty");
     });
+    index += 10;
 }
 
 function addClass(element, className) { element.forEach(el => el.classList.add(className)); }
 
 function removeClass(element, className) {element.forEach(el => el.classList.remove(className)); }
 
+
 function createBookStructure(quantity) {
-    var book = document.querySelector("div.empty");
     for(var i = 0; i <= quantity; i++) {
-        var newBook = book.cloneNode(true);
+        var newBook = gBook.cloneNode(true);
         
         document.querySelector("div.results").appendChild(newBook);
     }
@@ -50,7 +62,7 @@ function getInputValue() {
     const element = document.querySelector("input.nav_search_bar")
     const value = element.value;
     if (value == "") return "";
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${value}&maxResults=12`;
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${value}&maxResults=10&startIndex=${index}`;
 
     return url;
 }
@@ -85,8 +97,6 @@ function toggleAlert() {
             pos++;
         }
     }
-    
-
 }
 
 function resetVisibility() {
@@ -100,7 +110,7 @@ function resetVisibility() {
 function eventListenerHandler() {
     const search = document.querySelector(".send");
 
-    search.addEventListener("click",    function() {
+    search.addEventListener("click", function() {
         var url = getInputValue();
         
         if(url != "") {
@@ -113,6 +123,12 @@ function eventListenerHandler() {
         }
     });
 
+    const back = document.querySelector(".nav_back_arrow");
+
+    back.addEventListener("click", toHomeScreen, false);
+}
+
+function foda() {
     let booksImage = document.querySelectorAll("div.book > img");
 
     booksImage.forEach(function(element) { 
@@ -120,7 +136,7 @@ function eventListenerHandler() {
     });
 }
 
-async function toBookScreen(element) {
+function toBookScreen(element) {
     let id = element.style.getPropertyValue("--id");
     
     setCookie("id", id, 1);
@@ -140,42 +156,3 @@ function setCookie(c_name, value, exdays) {
 
 }
 
-function loadBookDetails(img, desc, aut, tit, url, quant, index) {
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data.items && data.items.length > 0) {
-
-                for(var i = 0; i < quant; i++, index++) {
-
-                    const book = data.items[index];
-                    const id = book.id;
-                    const title = book.volumeInfo.title;
-                    const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
-                    const description = book.volumeInfo.description;
-                    const author = book.volumeInfo.authors?.[0];
-
-                    if (thumbnail && img) {
-                            
-                        img[i].src = thumbnail;
-                        img[i].alt = title;
-                        img[i].style.setProperty("--id", id)
-
-                    }
-
-                    if (description && desc) { desc[i].innerHTML = description; }
-
-                    if (author && aut) { aut[i].innerHTML = author; }
-
-                    if(title && tit) { tit[i].innerHTML = title; } 
-
-                }
-
-            } 
-            else { console.log("No books found"); }
-        }
-    );
-
-
-}

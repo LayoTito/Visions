@@ -1,15 +1,12 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+import{ doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { setCookie, getCookie } from "../../library.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyC01VkLKSnZa0HPexEuMSMmMROgkHrQ9Uw",
   authDomain: "visions-6dcc5.firebaseapp.com",
@@ -20,50 +17,74 @@ const firebaseConfig = {
   measurementId: "G-7DXHMFXZXE",
 };
 
-
+document.addEventListener("DOMContentLoaded", function () {
+  const userCookie = getCookie("user");
+  if (userCookie) {
+    window.location.href = "../Home/structure.html";
+  }
+});
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
-const user = null;
+let user;
 
 function getUserCredentials() {
-  window.location.href = "../Home/structure.html";
-}
-
-window.getUserCredentials = getUserCredentials;
-
-function login() {
-  window.location.href = "../Home/structure.html";
-}
-
-window.login = login;
-
-
-
-/*function getUserCredentials() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  const passwordConfirm = document.getElementById("passwordConfirm").value;
 
-  const auth = getAuth();
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed up
-      window.location.href = "../Home/structure.html";
-      user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
+  if (isSignUpValid(email, password, passwordConfirm)) {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        window.location.href = "../Home/structure.html";
+        user = userCredential.user;
 
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-    });
+      startDatabase(user.uid, email, password) {
+        setDoc(doc(db, "users", uid)), {
+          uid: uid,
+          name: email.split("@")[0],
+        }
 
+        setCookie("user", user.uid, 365);
+      }
+
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  }
+  else {
+    alert("Invalid credentials. Please try again.");
+  }
 }
-
 window.getUserCredentials = getUserCredentials;
+
+function isSignUpValid(email, password, passwordConfirm) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+    if (email === "" || password === "" || passwordConfirm === "") {
+        alert("Please fill in all fields.");
+        return false;
+    }
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+    if (password !== passwordConfirm) {
+        alert("Passwords do not match.");
+        return false;
+    }
+    if (!passwordPattern.test(password)) {
+        alert("Password must be at least 6 characters, include an uppercase letter, a lowercase letter, and a number.");
+        return false;
+    }
+    return true;
+}
 
 function login() {
   const email = document.getElementById("emailLogin").value;
@@ -72,10 +93,11 @@ function login() {
   const auth = getAuth();
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in
+    
       window.location.href = "../Home/structure.html";
       user = userCredential.user;
-      // ...
+      
+      setCookie("user", user.uid, 365);
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -83,4 +105,4 @@ function login() {
     });
 }
 
-window.login = login;*/
+window.login = login;

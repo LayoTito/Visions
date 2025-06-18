@@ -44,8 +44,6 @@ function recommendationLoads(url) {
     const authors = document.querySelectorAll("div.recommendations > div.books > div.text > h1.author");
     const descriptions = document.querySelectorAll("div.recommendations > div.books > div.text > p.description");
 
-    console.log(images, titles, authors, descriptions);
-
     loadBookDetails(images, descriptions, authors, titles, url, images.length, 0);
 }
 

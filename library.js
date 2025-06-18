@@ -19,8 +19,8 @@ export function loadBookDetails(img, desc, aut, tit, url, quant, index) {
     .then(response => response.json())
     .then(data => {
         if (data.items && data.items.length > 0) {
-            for(var i = 0; i < quant; i++) {
-                const book = data.items[index + i];
+            for(var i = 0; i < Math.min(quant, data.items.length - index); i++) {
+                const book = data.items[i];
                 const id = book.id;
                 const title = book.volumeInfo.title;
                 const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
@@ -68,7 +68,6 @@ export function loadBookDetails(img, desc, aut, tit, url, quant, index) {
         }         
         else { console.log("No books found"); }
     }
-    
 );}
 
 function setCookie(name, value, exdays) {
