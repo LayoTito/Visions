@@ -2,6 +2,7 @@ import { toHomeScreen } from '../../library.js';
 import { toSearchScreen } from '../../library.js';
 import { loadBookDetails } from '../../library.js';
 import { getCookie } from '../../library.js'
+import { storeReview } from '../../Data_Base/model.js';
 
 document.addEventListener("DOMContentLoaded", function () {
     setPageData();
@@ -88,12 +89,25 @@ document.querySelectorAll('.heart').forEach(heart => {
     });
 });
 
-document.querySelector('.resenhapopup .close').addEventListener('click', function() {
-    document.querySelector('.resenhapopup').style.display = 'none';
+document.querySelector('.resenha > .top > button').addEventListener('click', function() {
+  document.querySelector('.resenha').style.display = 'none';
 });
 
 document.querySelectorAll('.open-review').forEach(btn => {
     btn.addEventListener('click', function() {
-        document.querySelector('.resenhapopup').style.display = 'flex';
+        document.querySelector('.resenha').style.display = 'flex';
     });
+});
+
+document.querySelector('.resenha > .bottom > button').addEventListener('click', function() {
+    const reviewText = document.querySelector('.resenha > textarea').value;
+    if (reviewText.trim() === '') {
+        alert('Please write a review before submitting.');
+        return;
+    }
+
+    storeReview();
+
+    console.log('Review submitted:', reviewText);
+    document.querySelector('.resenha').style.display = 'none';
 });

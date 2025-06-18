@@ -4,6 +4,8 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import{ doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+import { increment, collection, query, where, getDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
 
 import { setCookie, getCookie } from "../../library.js";
 
@@ -19,7 +21,7 @@ const firebaseConfig = {
 
 document.addEventListener("DOMContentLoaded", function () {
   const userCookie = getCookie("user");
-  if (userCookie) {
+  if (userCookie && window.location.pathname.includes("Initial")) {
     window.location.href = "../Home/structure.html";
   }
 });
@@ -39,18 +41,21 @@ function getUserCredentials() {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        window.location.href = "../Home/structure.html";
         user = userCredential.user;
 
-      startDatabase(user.uid, email, password) {
-        setDoc(doc(db, "users", uid)), {
-          uid: uid,
+        setDoc(doc(db, "users", user.uid), {
+          uid: user.uid,
           name: email.split("@")[0],
-        }
-
-        setCookie("user", user.uid, 365);
-      }
-
+          id: '@' + email.split("@")[0],
+        })
+        .then(() => {
+          console.log("Usuário salvo com sucesso!");
+          setCookie("user", user.uid, 365);
+          window.location.href = "../Home/structure.html";
+        })
+        .catch((error) => {
+          alert("Erro ao salvar usuário no Firestore:", error);
+        });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -105,4 +110,81 @@ function login() {
     });
 }
 
+export function incrementBookViews(bookId) {
+  const bookRef = doc(db, "books", bookId);
+
+  setDoc(bookRef, {
+    id: bookId,
+    views: increment(1)  // cria ou incrementa
+  }, { merge: true })
+    .then(() => {
+      console.log("Visualização incrementada.");
+    })
+    .catch((error) => {
+      console.error("Erro ao incrementar views:", error.message);
+    });
+}
+
 window.login = login;
+
+export function storeReview() {
+
+  const reviewText = document.querySelector('.resenha > textarea').value;
+  const visibility = document.querySelector('.resenha > .bottom > input').value;
+  const bookId = getCookie("id");
+  const userId = getCookie("user");
+
+  if (!reviewText || !bookId || !userId) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  const reviewRef = doc(db, "reviews", generateRandomString(16));
+
+  setDoc(reviewRef, {
+    userId: userId,
+    bookId: bookId,
+    review: reviewText,
+    visibility: visibility,
+    timestamp: new Date()
+  })
+  .then(() => {
+    console.log("Review stored successfully.");
+    document.querySelector('.resenha').style.display = 'none';
+  })
+  .catch((error) => {
+    console.error("Error storing review:", error);
+  });
+
+}
+
+function generateRandomString(length) {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  return result;
+}
+
+export async function getNameAndId(uid) {
+  const userRef = doc(db, "users", uid);
+  const userSnap = await getDoc(userRef);
+
+  const name = document.querySelector(".profile_name");
+  const idd = document.querySelector(".profile_id");
+
+  if (userSnap.exists()) {
+    const nome = userSnap.data().name;
+    const id = userSnap.data().id;
+
+    name.innerHTML = nome;
+    idd.innerHTML = id;
+    return nome;
+  } else {
+    console.log("Usuário não encontrado.");
+    return null;
+  }
+}

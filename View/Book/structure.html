@@ -84,29 +84,34 @@
 
     </div>
 
-    <div class = "resenhapopup">
-
-        <div class="popup-content">
-
+    <div class="resenha">
+        <div class="top">
             <h1>Resenha</h1>
-            <button class="close" onclick="togglePopup()">X</button>
-            <textarea class="review-text" placeholder="Escreva sua resenha aqui..."></textarea>
-            <button class="submit-review" onclick="submitReview()">PUBLICAR</button>
-
-             <div class="rating-stars">
-                <span class="heart" title="Favoritar">&#10084;</span>
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
-                <span class="star" data-value="5">&#9733;</span>
-            </div>
-
+            <button>X</button>
         </div>
 
-    </div>
+        <hr>
 
-    
+        <div class="ratings">
+            <img class="heart" src="../../Images/heart_icon.png" class="heart" alt="Heart Icon">
+        
+            <div class="rating">
+                <img src="../../Images/estrela.png" alt="">
+                <img src="../../Images/estrela.png" alt="">
+                <img src="../../Images/estrela.png" alt="">
+                <img src="../../Images/estrela.png" alt="">
+                <img src="../../Images/estrela.png" alt="">
+            </div>
+        </div>
+
+        <textarea class="content" placeholder="Digite a sua resenha"></textarea>
+
+        <div class="bottom">
+            <input type="checkbox">
+            <p>Tornar vísivel</p>
+            <button>Enviar</button>
+        </div>
+    </div>
     
 </body>
 </html>

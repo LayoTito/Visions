@@ -1,3 +1,11 @@
+let user;
+
+document.addEventListener("DOMContentLoaded", function() {
+    user = getCookie("user");
+});
+
+import { incrementBookViews } from "./Data_Base/model.js";
+
 export function toProfileScreen() { window.location.href = "../Profile/structure.html"; }
 
 export function toSearchScreen() { window.location.href = "../Search/structure.html"; }
@@ -7,6 +15,7 @@ export function toBookScreen(element) {
     
     setCookie("id", id, 1);
     setCookie("from", "home", 1);
+    incrementBookViews(id);
 
     window.location.href = "../Book/structure.html";
 }
@@ -70,7 +79,7 @@ export function loadBookDetails(img, desc, aut, tit, url, quant, index) {
     }
 );}
 
-function setCookie(name, value, exdays) {
+export function setCookie(name, value, exdays) {
     var exdate = new Date();
     exdate.setDate(exdate.getDate() + exdays);
 

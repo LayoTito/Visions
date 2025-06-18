@@ -1,7 +1,13 @@
+import { getNameAndId } from "../../Data_Base/model.js";
+import { getCookie } from "../../library.js";
+
 document.addEventListener("DOMContentLoaded", function() {
 
     loadCarouselImages();
     eventListenerHandler()
+
+    const uid = getCookie("user");
+    getNameAndId(uid);
 
 })
 
