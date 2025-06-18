@@ -22,9 +22,9 @@ async function setPageData() {
     //let rat = document.querySelector("div.book_raing_container > div.rating_number");
     let desc = [document.querySelector("div.description > p.text")];
 
-    await loadBookDetails(image, desc, aut, tit, url, 1, 0);
-
-    if(image[0].src) { background[0].style.backgroundImage = `url('${image[0].src}')`; }
+    await loadBookDetails(image, desc, aut, tit, url, 1, 0).then(() => {
+        background[0].style.backgroundImage = `url('${image[0].src}')`;
+    });
 }
 
 function backScreen() {
