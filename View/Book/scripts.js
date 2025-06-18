@@ -38,4 +38,62 @@ function eventListenerHandler() {
     const back = document.querySelector("button.back-arrow");
 
     back.addEventListener("click", backScreen, false);
+     const popup = document.querySelector('.buttons > .libary');
+     popup.addEventListener("click", togglePopup, false);
+
 }
+
+document.querySelector('.estantepopup .close').addEventListener('click', function() {
+    document.querySelector('.estantepopup').style.display = 'none';
+});
+
+function togglePopup() {
+    console.log("aqui");
+    const popup = document.querySelector('.estantepopup');
+    if (popup.style.display === 'block') {
+        popup.style.display = 'none';
+    } else {
+        popup.style.display = 'block';
+    }
+}
+
+document.querySelectorAll('.estantepopup .estante-list input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelectorAll('.estantepopup .estante-list input[type="checkbox"]').forEach(cb => {
+                if (cb !== this) cb.checked = false;
+            });
+        }
+    });
+});
+
+document.querySelectorAll('.rating-stars .star').forEach(star => {
+    star.addEventListener('click', function() {
+        const value = parseInt(this.getAttribute('data-value'));
+        document.querySelectorAll('.rating-stars .star').forEach(s => {
+            if (parseInt(s.getAttribute('data-value')) <= value) {
+                s.classList.add('selected');
+            } else {
+                s.classList.remove('selected');
+            }
+        });
+        window.selectedRating = value;
+    });
+});
+
+document.querySelectorAll('.heart').forEach(heart => {
+    heart.addEventListener('click', function() {
+        this.classList.toggle('favorited');
+        window.isFavorited = this.classList.contains('favorited');
+    });
+});
+
+document.querySelector('.resenhapopup .close').addEventListener('click', function() {
+    document.querySelector('.resenhapopup').style.display = 'none';
+});
+
+document.querySelectorAll('.open-review').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelector('.resenhapopup').style.display = 'flex';
+    });
+});
