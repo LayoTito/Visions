@@ -15,7 +15,7 @@ export function toHomeScreen() { window.location.href = "../Home/structure.html"
 
 export function loadBookDetails(img, desc, aut, tit, url, quant, index) {
 
-    fetch(url)
+    return fetch(url)
     .then(response => response.json())
     .then(data => {
         if (data.items && data.items.length > 0) {
@@ -43,7 +43,29 @@ export function loadBookDetails(img, desc, aut, tit, url, quant, index) {
             
             }
            
-        }            
+        }
+        else if(data) {
+            const book = data;
+            const id = book.id;
+            const title = book.volumeInfo.title;
+            const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
+            const description = book.volumeInfo.description;
+            const author = book.volumeInfo.authors?.[0];
+
+            if (thumbnail && img) {
+                    
+                img[0].src = thumbnail;
+                img[0].alt = title;
+                img[0].style.setProperty("--id", id)
+
+            }
+
+            if (description && desc) { desc[0].innerHTML = description; }
+
+            if (author && aut) { aut[0].innerHTML = author; }
+
+            if(title && tit) { tit[0].innerHTML = title; } 
+        }         
         else { console.log("No books found"); }
     }
     
